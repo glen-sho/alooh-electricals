@@ -1,16 +1,69 @@
 [
-   {
-      "id": 1,
-      "title": "Aesthetic Retro Rattan Ceiling Light",
-      "description": "Order the Aesthetic Retro Rattan Ceiling Light from Light Trybe Nigeria to upgrade your space. Whether for your home, restaurant, or boutique, this chandelier is a stylish and functional lighting choice. Order now for fast 24-48-hour delivery!",
-      "category": "light",
-      "specification": [{ "voltage": "", "material": "", "color_temperature": "" }]
-   },
-   {
-      "id": 2,
-      "title": "Chinese Handmade Pendant Light shade",
-      "description": "Order the Aesthetic Retro Rattan Ceiling Light from Light Trybe Nigeria to upgrade your space. Whether for your home, restaurant, or boutique, this chandelier is a stylish and functional lighting choice. Order now for fast 24-48-hour delivery!",
-      "category": "switch",
-      "specification": [{ "voltage": "", "material": "", "color_temperature": "" }]
-   }
+  {
+    "id": "e4ffb5c0-aa0b-4240-a187-bfc0bf8fef3d",
+    "title": "1 Gang Switch",
+    "description": "A “1 gang switch” is a wall-mounted switch with a single button or lever used to control one electrical device or circuit from a specific location. It’s typically employed to operate a single light or appliance.",
+    "category": "switches",
+    "images": ["gang-switch.png"]
+  },
+  {
+    "id": "3030af9e-034e-4d0d-87a1-6ba74af31ffc",
+    "title": "12 WAY TPN",
+    "description": "",
+    "category": "switches",
+    "images": ["12-way-tpn.png"]
+  },
+  {
+    "id": "346e7a73-9d39-4de0-942a-97c024e8f79b",
+    "title": "2 Burner Stove",
+    "description": "",
+    "category": "switches",
+    "images": ["burner-stove.png"]
+  },
+  {
+    "id": "607f6b51-e80e-43e3-be38-dc8c9ca10101",
+    "title": "2 Gang Switch",
+    "description": "A 2 gang switch is a wall-mounted switch with two buttons that control separate electrical devices or circuits from a single location. It’s commonly used for managing two lights or appliances in the same area.",
+    "category": "switches",
+    "images": ["2-gang-switch.png"]
+  },
+  {
+    "id": "64c547eb-fe4f-4f00-9bc2-c0f3df6dede8",
+    "title": "20 Watt LED Bulb",
+    "description": "A “20 W LED bulb” is an energy-efficient light bulb that emits light using light-emitting diodes, consuming 20 watts of power. It’s a long-lasting and energy-saving lighting option.",
+    "category": "switches",
+    "images": ["20-watt-led-bulb.png"]
+  },
+  {
+    "id": "2bc01af5-7e2c-4477-b637-8f61ee00197d",
+    "title": "3 Gang Switch",
+    "description": "A 3 gang light switch has three separate controls on a single faceplate to operate different light circuits. Also referred to as triple light switches, they are often installed in rooms which have three sets of lights and provides a convenient option to control each individual as required.",
+    "category": "switches",
+    "images": ["3-gang-switch.png"]
+  },
+  {
+    "id": "17f61e17-91d4-4a11-81f9-ac2735a70843",
+    "title": "3-way circular box",
+    "description": "3-way circular box is a packaging container shaped like a circle with three separate compartments inside. It’s designed to hold and organize three items or sets of items within a single container. These boxes are often used for packaging small gifts, cosmetics, or other items where separating contents is desirable.",
+    "category": "switches",
+    "images": [
+      "3-way-circular-box.png",
+      "3-way-circular-box-2.png",
+      "3-way-circular-box-3.png"
+    ]
+  },
+  {
+    "id": "745f1d3e-2106-443b-9013-3b3368aefa35",
+    "title": "30 Watt LED Bulb",
+    "description": "A “30 W LED bulb” is an energy-efficient lighting option that emits light using light-emitting diodes and consumes 30 watts of power. These bulbs are known for their longevity and energy savings compared to traditional incandescent bulbs.",
+    "category": "switches",
+    "images": ["30-watt-led-bulb.png"]
+  },
+  {
+    "id": "c55eddfe-9d8f-4831-af95-7819a4127f73",
+    "title": "3×3 Conduit Box",
+    "description": "“3 x 3 conduit box” is a small square or rectangular box used in electrical installations to connect and protect wires. It measures 3 inches by 3 inches and provides a secure enclosure for wiring connections",
+    "category": "switches",
+    "images": ["3-x-3-conduit-box.png"]
+  }
 ]
