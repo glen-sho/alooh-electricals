@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import { socials } from "../../lib/constants";
+import Socials from "../Socials";
 
 export const navMenu = [
    { id: 1, title: "home", url: "/" },
@@ -16,32 +16,27 @@ export const navMenu = [
 export default function Navbar() {
    const [menu, setMenu] = useState(false);
    return (
-      <header className="shadow-sm z-50 bg-white fixed top-0 w-full">
+      <header className="border-b border-neutral-200/70 z-50 bg-white fixed top-0 w-full">
          <div className="bg-[#a4e9d5] py-1 justify-center items-center ">
             <p className="text-center capitalize text-sm"> welcome to our store</p>
          </div>
-         <nav className="mx-auto flex max-w-7xl items-center justify-between h-14 p-4">
+         <nav className="mx-auto flex max-w-7xl items-center justify-between h-14">
             <div className="flex gap-3">
                {navMenu.map((link) => (
-                  <Link key={link.id} href={link.url} className="uppercase hover:text-red-600">
+                  <Link key={link.id} href={link.url} className="uppercase hover:text-red-600 font-semibold">
                      {link.title}
                   </Link>
                ))}
             </div>
+
             <Image
-               src={"/new-orient-logo.png"}
+               src={"/logo.png"}
                alt="logo"
-               width={150}
-               height={150}
+               width={300}
+               height={300}
                className="object-contain mx-auto absolute left-1/2 -translate-x-1/2 "
             />
-            <div className="flex gap-3 items-center">
-               {socials.map((icon) => (
-                  <div key={icon.id} className="">
-                     {icon.icon}
-                  </div>
-               ))}
-            </div>
+            <Socials />
             <div className="flex lg:hidden">
                <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
                   <Menu />
