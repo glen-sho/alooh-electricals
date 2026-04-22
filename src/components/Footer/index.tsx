@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import { socials } from "../../lib/constants";
 import { navMenu } from "../Navbar";
 import Link from "next/link";
+import Socials from "../Socials";
 
 export default function Footer() {
    return (
@@ -50,13 +50,7 @@ export default function Footer() {
                            <span className="text-white font-semibold">+233 30 338 9976</span>
                         </div>
                      </div>
-                     <div className="flex gap-3 items-center py-4">
-                        {socials.map((icon) => (
-                           <div key={icon.id} className="text-white">
-                              {icon.icon}
-                           </div>
-                        ))}
-                     </div>
+                     <Socials />
                   </div>
                </div>
             </div>
