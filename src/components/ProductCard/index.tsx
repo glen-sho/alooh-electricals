@@ -1,11 +1,3 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import Image from "next/image";
 
 interface ProductCardProps {
@@ -14,26 +6,19 @@ interface ProductCardProps {
   images: string[];
 }
 
-export function ProductCard({ title, description, images }: ProductCardProps) {
+export function ProductCard({ title, images }: ProductCardProps) {
   return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0 shadow-2xl">
-      <div className="relative h-60 overflow-hidden bg-mist-300">
+    <div className="relative mx-auto w-full max-w-sm pt-0">
+      <div className="relative h-60 overflow-hidden bg-mist-100 items-center flex justify-center">
         <Image
           src={`/${images[0]}`}
           alt={title}
           className="object-contain"
-          fill
+          width={200}
+          height={200}
         />
       </div>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription className="line-clamp-3">
-          {description}
-        </CardDescription>
-      </CardHeader>
-      {/* <CardFooter>
-        <Button className="w-full">View Event</Button>
-      </CardFooter> */}
-    </Card>
+      <p className="font-heading pt-2"> {title}</p>
+    </div>
   );
 }
