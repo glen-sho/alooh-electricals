@@ -23,16 +23,17 @@ export default function Navbar() {
          <nav className="mx-auto flex max-w-7xl items-center justify-between h-14 p-4">
             <div className="flex gap-3">
                {navMenu.map((link) => (
-                  <Link key={link.id} href={link.url} className="uppercase hover:text-red-600">
+                  <Link key={link.id} href={link.url} className="uppercase hover:text-red-600 font-semibold">
                      {link.title}
                   </Link>
                ))}
             </div>
+
             <Image
-               src={"/new-orient-logo.png"}
+               src={"/logo.png"}
                alt="logo"
-               width={150}
-               height={150}
+               width={300}
+               height={300}
                className="object-contain mx-auto absolute left-1/2 -translate-x-1/2 "
             />
             <div className="flex gap-3 items-center">

@@ -12,15 +12,18 @@ export default function Footer() {
          <div className="max-w-7xl mx-auto space-y-14">
             <div className="grid grid-cols-2 items-start gap-4">
                <div className="space-y-6">
-                  <Image src={"/new-orient-logo.png"} alt="logo" width={120} height={120} className="object-contain" />
+                  <Image src={"/logo-white.png"} alt="logo" width={250} height={250} className="object-contain" />
                   <form action="" className="flex flex-col gap-4 w-2/3">
-                     <p className="text-white">Subscribe to Light Trybe newsletters</p>
+                     <p className="text-white">Subscribe to Alooh Electricals newsletters</p>
                      <input
                         type="text"
                         placeholder="email address"
-                        className="border border-mauve-700 rounded-lg p-2 placeholder:text-neutral-500 text-white"
+                        className="border border-mauve-700 rounded-lg p-2 placeholder:text-neutral-500 text-white focus:bg-mauve-800"
                      />
-                     <input type="submit" className="bg-white p-1 rounded-lg" />
+                     <input
+                        type="submit"
+                        className="bg-white p-2 rounded-lg font-semibold hover:bg-neutral-200 cursor-pointer"
+                     />
                   </form>
                </div>
                <div className="grid grid-cols-2">
@@ -30,7 +33,7 @@ export default function Footer() {
                         <Link
                            key={link.id}
                            href={link.url}
-                           className="capitalize text-mauve-400 hover:text-mauve-400 text-md block"
+                           className="capitalize text-mauve-400 hover:text-mauve-300 text-md block"
                         >
                            {link.title}
                         </Link>
@@ -38,8 +41,14 @@ export default function Footer() {
                   </div>
                   <div className="text-mauve-400 text-xl space-y-4">
                      <div className="">
-                        <p>Call: 09161848660</p>
-                        <p> WhatsApp: +234 705 877 9328</p>
+                        <div className="">
+                           <span>Telephone: </span>
+                           <span className="text-white font-semibold"> +233 24 408 1474</span>
+                        </div>
+                        <div className="">
+                           <span>Landline: </span>
+                           <span className="text-white font-semibold">+233 30 338 9976</span>
+                        </div>
                      </div>
                      <div className="flex gap-3 items-center py-4">
                         {socials.map((icon) => (
@@ -52,7 +61,7 @@ export default function Footer() {
                </div>
             </div>
             <div className=" border-t border-mauve-800 py-4">
-               <p className="text-mauve-400">© 2026 Alooh electricals. All rights reserved </p>
+               <p className="text-mauve-500">© 2026 Alooh Electricals. All rights reserved </p>
             </div>
          </div>
       </div>
