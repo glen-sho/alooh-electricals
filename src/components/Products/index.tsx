@@ -1,41 +1,50 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import productsData from "@/productData.json";
+import { ProductCard } from "../ProductCard";
+import Link from "next/link";
+import { toSlug } from "@/lib/utils";
 
 export default function Products() {
-   return (
-      <div className="">
-         <div className="max-w-7xl p-4 mx-auto">
-            <h1>Products</h1>{" "}
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nam minus! Exercitationem, vitae quod
-               eaque beatae, temporibus accusamus aspernatur quisquam debitis nobis sint laborum tempore, at amet! At,
-               ipsam accusamus.
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptatem asperiores cupiditate, nobis
-               esse dolor tempore officia cum obcaecati soluta hic possimus impedit nesciunt excepturi! Ea nam suscipit
-               deserunt atque. Esse vitae voluptate iusto, quam vel laborum! Ex earum repellat blanditiis sint aliquam
-               sunt debitis temporibus, itaque rerum eos nisi eligendi hic culpa, perferendis expedita eius impedit
-               nulla? Quod, libero. Voluptates, asperiores. Laboriosam amet nam, vero porro obcaecati rerum, voluptates
-               expedita earum reprehenderit aliquam itaque aliquid quod provident ab debitis assumenda quo, numquam
-               laudantium. Facilis voluptatibus laborum rerum minima necessitatibus! Voluptate tenetur quidem beatae id
-               magnam aliquam illum reiciendis, doloremque voluptatum dicta fugiat explicabo iusto quia a minima
-               laboriosam. Ab deserunt molestiae vitae est laboriosam aperiam, corrupti qui sed id! Ut laborum cum
-               repellat quam eaque excepturi hic maxime delectus amet illum numquam, impedit veniam culpa asperiores qui
-               quis corrupti et accusamus incidunt animi, officiis totam sit! Blanditiis, officiis reprehenderit. Quia
-               animi officia magni cumque non illo quibusdam optio est reiciendis quae, temporibus voluptates,
-               voluptatem ratione earum vitae illum perferendis voluptatum. Nesciunt voluptatibus non possimus sapiente
-               ut ullam libero. Neque. Pariatur, porro. Blanditiis inventore iste, natus nam quos ipsum doloribus sunt.
-               Necessitatibus sunt dolor optio sed vel beatae dolorum sint vitae aspernatur dolore, libero voluptas
-               corporis voluptatem dolores. Doloribus, nesciunt? Beatae error, odit ut nesciunt laudantium inventore
-               deserunt voluptas, consequuntur nemo, cupiditate est voluptatem reprehenderit? Maiores perspiciatis
-               dolorem ea, ut ipsa hic tempore eligendi est reiciendis laboriosam autem facere accusamus. Quasi ipsa,
-               officiis harum, qui eum veniam excepturi dolores pariatur, maiores optio blanditiis aspernatur nihil
-               distinctio ducimus vel porro dolorum? Ullam minus cupiditate tempore velit aperiam, laborum delectus
-               quidem aliquid? Libero accusamus harum tempore, facilis placeat reprehenderit ea quo id. Dignissimos
-               beatae labore quo repellendus ab adipisci ad, tempora ducimus laudantium eaque harum optio sequi nisi
-               dolorem modi hic iusto.
-            </p>
-         </div>
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const filteredProducts =
+    selectedCategory === "All"
+      ? productsData
+      : productsData.filter((product) => product.category === selectedCategory);
+
+  const categories = [
+    "All",
+    ...new Set(productsData.map((product) => product.category)),
+  ];
+  return (
+    <div className="">
+      <div className="max-w-7xl p-4 mx-auto">
+        <div className="flex gap-2 mb-8">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className="cursor-pointer"
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {filteredProducts.map((product) => {
+            const slug = toSlug(product.title);
+            return (
+              <Link href={`/${slug}`} key={product.id}>
+                <ProductCard
+                  title={product.title}
+                  description={product.description}
+                  images={product.images}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
-   );
+    </div>
+  );
 }
