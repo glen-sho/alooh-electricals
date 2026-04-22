@@ -3,22 +3,14 @@
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { socials } from "../../lib/constants";
 
-const navMenu = [
-   { id: 1, title: "home", url: "/home" },
+export const navMenu = [
+   { id: 1, title: "home", url: "/" },
    { id: 2, title: "about", url: "/about" },
    { id: 3, title: "our factory", url: "/our-factory" },
    { id: 4, title: "contact", url: "/contact" },
-];
-
-const socials = [
-   { id: 1, link: "/", icon: <FaFacebookF size={17} /> },
-   { id: 2, link: "/", icon: <FaXTwitter size={20} strokeWidth={10} /> },
-   { id: 3, link: "/", icon: <FaInstagram size={20} strokeWidth={10} /> },
-   { id: 4, link: "/", icon: <FaWhatsapp size={20} strokeWidth={10} /> },
 ];
 
 export default function Navbar() {
