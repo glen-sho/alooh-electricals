@@ -5,6 +5,7 @@ import productsData from "@/productData.json";
 import { toSlug } from "@/lib/utils";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, useCarousel } from "@/components/ui/carousel";
+import RelatedProducts from "../RelatedProducts";
 
 function ZoomableImage({ src, alt }: { src: string; alt: string }) {
    const [origin, setOrigin] = useState("50% 50%");
@@ -27,14 +28,12 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
          <Image
             src={src}
             alt={alt}
-            priority
             className="object-contain max-h-[85%] max-w-[85%] mx-auto my-auto transition-transform duration-200 ease-out"
             style={{
                transform: zoomed ? "scale(2)" : "scale(1)",
                transformOrigin: origin,
             }}
             fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
          />
       </div>
    );
@@ -72,22 +71,36 @@ export default function ProductDetailsContent({ slug }: { slug: string }) {
    const { title, description, images, category } = product || {};
 
    return (
-      <div className="max-w-6xl lg:py-20 m-auto grid lg:grid-cols-2 gap-15 mb-48">
-         <Carousel className="">
-            <CarouselContent className="ml-0">
-               {images.map((img, index) => (
-                  <CarouselItem key={index} className="pl-0">
-                     <ZoomableImage src={`/${img}`} alt={title} />
-                  </CarouselItem>
-               ))}
-            </CarouselContent>
-            <ThumbnailSlider images={images} />
-         </Carousel>
-         <div className="space-y-8 px-4">
-            <p className="capitalize p-0.5 border text-sm border-neutral-200 rounded-full px-3 w-fit">{category}</p>
-            <div className="space-y-4">
-               <h1 className="font-heading text-4xl lg:text-5xl font-semibold mt-4">{title}</h1>
-               <p className="text-lg">{description}</p>
+      <div className="">
+         <div className="max-w-6xl m-auto lg:py-28 space-y-24 pb-12">
+            <div className="grid lg:grid-cols-2 gap-15">
+               <Carousel className="">
+                  <CarouselContent className="ml-0">
+                     {images.map((img, index) => (
+                        <CarouselItem key={index} className="pl-0">
+                           <ZoomableImage src={`/${img}`} alt={title} />
+                        </CarouselItem>
+                     ))}
+                  </CarouselContent>
+                  <ThumbnailSlider images={images} />
+               </Carousel>
+               <div className="space-y-8 px-4">
+                  <p className="capitalize p-0.5 border text-sm border-neutral-200 rounded-full px-3 w-fit">
+                     {category}
+                  </p>
+                  <div className="space-y-4">
+                     <h1 className="font-heading text-4xl lg:text-5xl font-semibold mt-4">{title}</h1>
+                     <p className="text-lg">{description}</p>
+                  </div>
+               </div>
+            </div>
+            <div className="w-full space-y-6 p-4">
+               <h2 className="text-2xl font-semibold">Related Products</h2>
+               <RelatedProducts
+                  products={productsData}
+                  currentProductId={product.id}
+                  currentCategory={product.category}
+               />
             </div>
          </div>
       </div>
