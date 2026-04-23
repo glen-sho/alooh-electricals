@@ -26,7 +26,7 @@ export default function Products() {
       setItemsToShow((prev) => prev + 8);
    };
    return (
-      <div className="max-w-7xl mx-auto my-12 space-y-6">
+      <div className="max-w-7xl mx-auto my-12 space-y-6 pb-24">
          <div className="flex justify-between items-center">
             <div className="flex gap-2 items-center">
                <p className="font-semibold shrink-0">Filter by:</p>
