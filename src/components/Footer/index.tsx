@@ -4,7 +4,7 @@ import Image from "next/image";
 import { navMenu } from "../Navbar";
 import Link from "next/link";
 import Socials from "../Socials";
-import { Mailbox } from "lucide-react";
+import Newsletter from "../Newsletter";
 
 export default function Footer() {
    return (
@@ -20,23 +20,7 @@ export default function Footer() {
                      height={250}
                      className="object-contain"
                   />
-                  <form action="" className="flex flex-col gap-4 lg:w-2/3 bg-mauve-800 p-4 rounded-md">
-                     <div className="flex items-center gap-3">
-                        <Mailbox color="white" size={18} />
-                        <p className="text-white">Subscribe our newsletters</p>
-                     </div>
-                     <input
-                        type="text"
-                        placeholder="email address"
-                        inputMode="email"
-                        autoCapitalize={"off"}
-                        className="border border-mauve-600 rounded-lg p-2 placeholder:text-neutral-500 text-white focus:bg-mauve-700"
-                     />
-                     <input
-                        type="submit"
-                        className="bg-white p-2 rounded-lg font-semibold hover:bg-neutral-200 cursor-pointer"
-                     />
-                  </form>
+                  <Newsletter />
                </div>
                <div className="grid lg:grid-cols-2 gap-8">
                   <div className="">
