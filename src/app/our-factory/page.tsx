@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function OurFactory() {
    return (
-      <div className="mt-20">
+      <div>
          <div className="h-[60vh] relative bg-[url(/factory.webp)] bg-cover bg-no-repeat parallex">
             <h1 className="text-8xl text-white absolute -bottom-5 uppercase font-bold">Factory</h1>
          </div>
@@ -18,9 +18,9 @@ export default function OurFactory() {
                   </p>
                </div>
                <div className="text-2xl font-medium">
-                  Our products are a testament to Ghana’s potential and New Orient’s unwavering commitment to quality.
+                  {` Our products are a testament to Ghana’s potential and New Orient’s unwavering commitment to quality.
                   We take pride in the trust our customers place in us, not only in Ghana but also around the world. Our
-                  “Made in Ghana” products are a symbol of excellence and reliability.
+                  “Made in Ghana” products are a symbol of excellence and reliability.`}
                </div>
             </div>
          </div>
@@ -29,24 +29,25 @@ export default function OurFactory() {
                <div className="text-neutral-300 space-y-4">
                   <h1 className="text-5xl font-bold">Bridging the Gap</h1>
                   <p className="text-2xl">
-                     New Orient is the bridge that brings manufacturing of electrical goods to Ghana. We are committed
+                     {` New Orient is the bridge that brings manufacturing of electrical goods to Ghana. We are committed
                      to pioneering change, setting industry standards, and providing a platform for the growth of
                      Ghana’s manufacturing sector. We believe in Ghana’s potential, and we’re here to turn that
-                     potential into reality.
+                     potential into reality`}
+                     .
                   </p>
                </div>
                <div className="text-neutral-300 space-y-4">
                   <h1 className="text-5xl font-bold">Join us on the Journey</h1>
                   <p className="text-2xl">
-                     We invite you to be part of our story, a story of growth, innovation, and community. Whether you’re
+                     {` We invite you to be part of our story, a story of growth, innovation, and community. Whether you’re
                      a customer, a partner, or a member of the industry, New Orient welcomes you to explore our world of
-                     electrical excellence. Together, we’ll shape a brighter future for Ghana’s electrical industry.
+                     electrical excellence. Together, we’ll shape a brighter future for Ghana’s electrical industry.`}
                   </p>
                </div>
 
                <div className="flex items-center gap-6">
                   <p className="text-neutral-300 text-2xl">
-                     At New Orient, it's not just business; it's a legacy in the making
+                     {` At New Orient, it's not just business; it's a legacy in the making`}
                   </p>
 
                   <Link
