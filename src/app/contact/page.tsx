@@ -4,14 +4,14 @@ import React from "react";
 
 export default function Contact() {
    return (
-      <div className="mt-20">
+      <div>
          <div className="max-w-7xl mx-auto pt-40 pb-20">
             <div className="grid grid-cols-[1.3fr_2fr] gap-4">
                <div className="">
                   <h1 className="text-7xl font-bold">Get in touch</h1>
                   <p className="text-lg">
-                     We'd like to hear from you, whether you have a question need support , or want to learnmore
-                     aboutour services.
+                     {` We'd like to hear from you, whether you have a question need support , or want to learnmore
+                     aboutour services.`}
                   </p>
                   <Socials />
                </div>

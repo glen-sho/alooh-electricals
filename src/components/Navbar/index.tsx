@@ -5,6 +5,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import Socials from "../Socials";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export const navMenu = [
    { id: 1, title: "home", url: "/" },
@@ -14,11 +16,21 @@ export const navMenu = [
 ];
 
 export default function Navbar() {
-   const [menu, setMenu] = useState(false);
+   const [menu] = useState(false);
    return (
       <header className="border-b border-neutral-200/70 z-50 bg-white fixed top-0 w-full">
          <div className="bg-[#a4e9d5] py-1 justify-center items-center ">
-            <p className="text-center capitalize text-sm"> welcome to our store</p>
+            <Carousel
+               plugins={[Autoplay({ delay: 3000 })]}
+               opts={{ loop: true }}
+               className=" left-1/2 -translate-x-1/2 w-fit"
+            >
+               <CarouselContent>
+                  <CarouselItem className="text-center">Welcome to our store</CarouselItem>
+                  <CarouselItem className="text-center">Made in Ghana, Trusted Worldwide</CarouselItem>
+               </CarouselContent>
+            </Carousel>
+            <p className="text-center capitalize text-sm"> </p>
          </div>
          <nav className="mx-auto flex max-w-7xl items-center justify-between h-14">
             <div className="flex gap-3">

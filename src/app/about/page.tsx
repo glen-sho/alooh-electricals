@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 export default function About() {
@@ -24,7 +23,7 @@ export default function About() {
    ];
 
    return (
-      <div className="mt-20">
+      <div>
          <div className="h-[60vh] relative bg-[url(/about.jpg)] bg-cover bg-no-repeat parallex">
             <h1 className="text-8xl text-white absolute -bottom-5 uppercase font-bold">About us</h1>
          </div>

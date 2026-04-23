@@ -17,26 +17,21 @@ const heroItems = [
 ];
 export default function Hero() {
    return (
-      <div className=" w-full">
-         <Carousel plugins={[Autoplay({ delay: 7000 })]} opts={{ loop: true }}>
-            <CarouselContent>
-               {heroItems.map((item) => (
-                  <CarouselItem
-                     key={item.id}
-                     className={cn(`relative w-full flex justify-center items-center h-[80vh]!`)}
-                  >
-                     <Image src={item.image} alt="hero-silde-image" fill objectFit="cover" />
-                     <div className="absolute h-full w-full bg-black/30"></div>
-                     <div className="absolute text-center mx-auto z-10">
-                        <h1 className="text-6xl font-Linden_Hill font-bold text-white">{item.title}</h1>
-                        <p className="text-2xl text-white">{item.subtitle}</p>
-                     </div>
-                  </CarouselItem>
-               ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-20" />
-            <CarouselNext className="right-20" />
-         </Carousel>
-      </div>
+      <Carousel plugins={[Autoplay({ delay: 7000 })]} opts={{ loop: true }}>
+         <CarouselContent>
+            {heroItems.map((item) => (
+               <CarouselItem key={item.id} className={cn(`relative w-full flex justify-center items-center h-[90vh]!`)}>
+                  <Image src={item.image} alt="hero-silde-image" fill objectFit="cover" />
+                  <div className="absolute h-full w-full bg-black/30"></div>
+                  <div className="absolute text-center mx-auto z-10">
+                     <h1 className="text-6xl font-Linden_Hill font-bold text-white">{item.title}</h1>
+                     <p className="text-2xl text-white">{item.subtitle}</p>
+                  </div>
+               </CarouselItem>
+            ))}
+         </CarouselContent>
+         <CarouselPrevious className="left-20" />
+         <CarouselNext className="right-20" />
+      </Carousel>
    );
 }
