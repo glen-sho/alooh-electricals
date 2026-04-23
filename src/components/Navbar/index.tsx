@@ -7,6 +7,7 @@ import Image from "next/image";
 import Socials from "../Socials";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Sidebar from "../Sidebar/Index";
 
 export const navMenu = [
    { id: 1, title: "home", url: "/" },
@@ -16,7 +17,7 @@ export const navMenu = [
 ];
 
 export default function Navbar() {
-   const [menu] = useState(false);
+   const [sidemenu, setSidemenu] = useState(false);
    return (
       <header className="border-b border-neutral-200/70 z-50 bg-white fixed top-0 w-full">
          <div className="bg-[#a4e9d5] py-1 justify-center items-center ">
@@ -32,28 +33,25 @@ export default function Navbar() {
             </Carousel>
             <p className="text-center capitalize text-sm"> </p>
          </div>
-         <nav className="mx-auto flex max-w-7xl items-center justify-between h-14">
-            <div className="flex gap-3">
+         <nav className="mx-auto flex max-w-7xl items-center justify-between h-14 px-4">
+            <div className="flex lg:hidden">
+               <button onClick={() => setSidemenu(true)} aria-label="Open menu">
+                  <Menu color="black" size={28} />
+               </button>
+               <Sidebar isOpen={sidemenu} onClose={() => setSidemenu(false)} />
+            </div>
+            <div className="hidden lg:flex gap-3">
                {navMenu.map((link) => (
-                  <Link key={link.id} href={link.url} className="uppercase hover:text-red-600 font-semibold">
+                  <Link key={link.id} href={link.url} className="uppercase font-semibold">
                      {link.title}
                   </Link>
                ))}
             </div>
-
-            <Image
-               src={"/logo.png"}
-               alt="logo"
-               width={300}
-               height={300}
-               className="object-contain mx-auto absolute left-1/2 -translate-x-1/2 "
-            />
-            <Socials />
-            <div className="flex lg:hidden">
-               <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
-                  <Menu />
-               </button>
-               {menu && <div className="">mobile menu</div>}
+            <div className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-80 lg:h-8">
+               <Image src={"/logo.png"} alt="logo" priority fill sizes="(max-width: 1024px) 192px, 320px" className="relative object-contain" />
+            </div>
+            <div className="hidden lg:flex gap-3">
+               <Socials />
             </div>
          </nav>
       </header>

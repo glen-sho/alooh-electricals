@@ -12,7 +12,7 @@ export default function OurFactory() {
          <div className="max-w-7xl mx-auto pt-14 pb-20">
             <div className="grid grid-cols-[1fr_2fr] items-center">
                <div className="relative h-86 w-86">
-                  <Image src={"/flag.jpg"} alt="logo" fill />
+                  <Image src={"/flag.jpg"} alt="logo" fill sizes="344px" priority />
                   <p className="text-4xl font-semibold absolute bottom-0 left-1/2 w-full text-white bg-black">
                      Made in Ghana <br /> Trusted Worldwide
                   </p>

@@ -17,13 +17,23 @@ const heroItems = [
 ];
 export default function Hero() {
    return (
-      <Carousel plugins={[Autoplay({ delay: 7000 })]} opts={{ loop: true }}>
+      <Carousel plugins={[Autoplay({ delay: 10000 })]} opts={{ loop: true }}>
          <CarouselContent>
             {heroItems.map((item) => (
-               <CarouselItem key={item.id} className={cn(`relative w-full flex justify-center items-center h-[90vh]!`)}>
-                  <Image src={item.image} alt="hero-silde-image" fill objectFit="cover" />
+               <CarouselItem
+                  key={item.id}
+                  className={cn(`relative w-full flex justify-center items-center h-[80vh]! lg:h-[90vh]!`)}
+               >
+                  <Image
+                     src={item.image}
+                     alt="hero-silde-image"
+                     priority
+                     fill
+                     sizes="100vw"
+                     className="object-top object-cover"
+                  />
                   <div className="absolute h-full w-full bg-black/30"></div>
-                  <div className="absolute text-center mx-auto z-10">
+                  <div className="absolute text-center mx-auto z-10 p-4">
                      <h1 className="text-6xl font-Linden_Hill font-bold text-white">{item.title}</h1>
                      <p className="text-2xl text-white">{item.subtitle}</p>
                   </div>
