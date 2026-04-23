@@ -25,7 +25,7 @@
     "title": "2 Gang Switch",
     "description": "A 2 gang switch is a wall-mounted switch with two buttons that control separate electrical devices or circuits from a single location. It’s commonly used for managing two lights or appliances in the same area.",
     "category": "switches",
-    "images": ["2-gang-switch.png"]
+    "images": ["2-gang-switch.png", "2-gang-switch-2.jpg"]
   },
   {
     "id": "64c547eb-fe4f-4f00-9bc2-c0f3df6dede8",
@@ -39,7 +39,7 @@
     "title": "3 Gang Switch",
     "description": "A 3 gang light switch has three separate controls on a single faceplate to operate different light circuits. Also referred to as triple light switches, they are often installed in rooms which have three sets of lights and provides a convenient option to control each individual as required.",
     "category": "switches",
-    "images": ["3-gang-switch.png"]
+    "images": ["3-gang-switch.png", "3-gang-switch-2.jpg"]
   },
   {
     "id": "17f61e17-91d4-4a11-81f9-ac2735a70843",
@@ -65,5 +65,138 @@
     "description": "“3 x 3 conduit box” is a small square or rectangular box used in electrical installations to connect and protect wires. It measures 3 inches by 3 inches and provides a secure enclosure for wiring connections",
     "category": "switches",
     "images": ["3-x-3-conduit-box.png"]
+  },
+  {
+    "id": "3a0b623d-1a4f-4286-8c63-751f68564754",
+    "title": "3×6 Conduit Box",
+    "description": "3 x 6 conduit box” is a rectangular electrical junction box with dimensions of 3 inches by 6 inches. These boxes are used in electrical installations to connect and protect wires, serving as an enclosure for wiring connections. They come in various sizes, and the “3 x 6” size refers to its specific dimensions.",
+    "category": "switches",
+    "images": ["3-x-6-conduit-box.png"]
+  },
+  {
+    "id": "17d10864-ca17-42a8-8b7c-d2119a31df5c",
+    "title": "4 Way Single Phase",
+    "description": "Upgrade your electrical distribution with Havells Single Phase Distribution Board in Regal Grey, suitable for commercial and industrial use. Available in 4W, 6W, 8W, 12W, and 16W, it’s designed for surface and flush mounting and includes DIN channel, Bus Bar, Neutral Link Bar, Earth Bar, and interconnecting cables with copper thimble. Features ample wiring space for proper distribution of neutral and earth wires, fully shielded bus-bars, and protection against accidental touching. IP42 rated for protection against solid objects and falling drops of water. Ensure safe and reliable power distribution with Havells’ quality and precision in residential and small-scale commercial settings.",
+    "category": "switches",
+    "images": ["4-way-single-phase.png"]
+  },
+  {
+    "id": "58ade213-b740-4204-84c7-7ae8cdee5e91",
+    "title": "4 WAY TPN",
+    "description": "",
+    "category": "switches",
+    "images": ["4-way-tpn.png"]
+  },
+  {
+    "id": "d1c8e5b9-7a0c-4f1e-9a3b-8c2e5f1a2b3c",
+    "title": "6 Way TPN",
+    "description": "",
+    "category": "switches",
+    "images": ["6-way-tpn.png"]
+  },
+  {
+    "id": "e5f1a2b3-c4d5-6e7f-8a9b-0c1d2e3f4g5h",
+    "title": "8 WAY TPN",
+    "description": "",
+    "category": "switches",
+    "images": ["8-way-tpn.png"]
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2f3g-4h5i-6j7k8l9m0n1",
+    "title": "Air Conditioner Switch",
+    "description": "An “air conditioner switch” is a control device used to turn an air conditioning system on or off, allowing you to adjust the cooling or heating of a room or space. It’s a basic component for managing the operation of air conditioners.",
+    "category": "switches",
+    "images": ["air-conditioner-switch.png"]
+  },
+  {
+    "id": "g7h8i9j0-k1l2-3m4n-5o6p-7q8r9s0t1u2",
+    "title": "Antenna",
+    "description": "Effortlessly capture over-the-air TV channels with this reliable TV antenna. Enjoy crisp HD broadcasts of your favorite local programs without subscription fees. Easy to install and compatible with both analog and digital signals, it’s the perfect solution for enhancing your TV viewing experience.",
+    "category": "switches",
+    "images": ["antenna-1.png", "antenna-2.png"]
+  },
+  {
+    "id": "h8i9j0k1-l2m3-4n5o-6p7q-8r9s0t1u2v3",
+    "title": "Breaker",
+    "description": "An electrical safety device, a switch that automatically interrupts the current of an overloaded electric circuit, ground faults, or short circuits.",
+    "category": "switches",
+    "images": ["breaker.png"]
+  },
+  {
+    "id": "ae4c03f8-9931-4119-829f-f41c52d2f68c",
+    "title": "Bulb",
+    "description": "",
+    "category": "switches",
+    "images": ["bulb.png"]
+  },
+  {
+    "id": "da0f57c4-c6f1-4557-9a7f-179a4d6486fe",
+    "title": "Coaxial Cable",
+    "description": "Coaxial cable” is a type of cable used for TV and internet connections. It has a central wire surrounded by insulation, a metal shield, and an outer insulating layer. Coaxial cables are known for their signal quality and are commonly used for high-frequency transmissions.",
+    "category": "switches",
+    "images": ["coaxial-cable.png"]
+  },
+  {
+    "id": "0421b453-ead3-4f84-83fe-2f737b972b97",
+    "title": "Double Socket",
+    "description": "A “double socket” is an electrical outlet with two slots, allowing you to plug in and power two devices or appliances simultaneously from a single wall or floor receptacle.",
+    "category": "switches",
+    "images": ["double-socket.png"]
+  },
+  {
+    "id": "4caffbcb-8cfb-4aec-8f3d-6d5cf3a811ea",
+    "title": "Lampholder",
+    "description": "Securely hold your light bulbs in place with our durable lampholder. Designed for easy installation and compatibility with a variety of bulb types, it ensures reliable and safe lighting in any space. Enhance your home or workspace with this essential lighting accessory.",
+    "category": "switches",
+    "images": ["lampholder.png"]
+  },
+  {
+    "id": "8b6e397f-3686-452d-9e7e-dfea6e88ef39",
+    "title": "LED Panel Surface Lights",
+    "description": "",
+    "category": "switches",
+    "images": ["led-panel-surface-light.webp", "led-panel-surface-light-2.webp"]
+  },
+  {
+    "id": "38f48e55-6294-4048-b902-454b0f317c32",
+    "title": "Pattress Box",
+    "description": "A “pattress box” is an electrical box that houses switches, outlets, or other electrical devices in walls or ceilings, providing a protective enclosure for the wiring and connections.",
+    "category": "switches",
+    "images": ["pattress-box.png"]
+  },
+  {
+    "id": "a834c526-f4a4-4ceb-9bdb-e0945630f47c",
+    "title": "PVC (polyvinyl chloride) pipe",
+    "description": "A PVC (polyvinyl chloride) pipe is a type of plastic pipe commonly used for various plumbing, drainage, irrigation, and other applications. PVC pipes are durable, lightweight, and resistant to corrosion and chemicals, making them suitable for both indoor and outdoor use. They come in various diameters and lengths, and they can be easily cut, joined, and installed using solvent cement or fittings. PVC pipes are known for their affordability, versatility, and ease of installation, making them a popular choice in construction and plumbing projects.",
+    "category": "switches",
+    "images": ["pvc-pipe.png", "pvc-pipe-2.png"]
+  },
+  {
+    "id": "905e7e55-8a6f-4faf-a62f-b8d8a8170993",
+    "title": "Single Socket",
+    "description": "A “single socket” is a basic electrical outlet with a single slot for plugging in one device or appliance, providing power to a single electrical device at a time.",
+    "category": "switches",
+    "images": ["single-socket.png"]
+  },
+  {
+    "id": "e863bae6-2ba1-4fc9-ba96-fd9792ebf4ff",
+    "title": "Standing Fan",
+    "description": "A “standing fan” is a floor-based electric fan used for cooling indoor spaces. It has an adjustable height and multiple speed settings for air circulation and cooling.",
+    "category": "switches",
+    "images": ["standing-fan.png"]
+  },
+  {
+    "id": "a2859835-0d37-4492-885c-839024835d3c",
+    "title": "Trunk",
+    "description": "Trunking is a type of cable management system used to organize and protect electrical wires or cables. It consists of a plastic or metal enclosure with a removable or hinged lid, allowing cables to be neatly arranged inside. Trunking is commonly installed along walls, floors, or ceilings to conceal and safeguard cables, providing a tidy and safe environment for electrical installations. It’s widely used in both residential and commercial buildings to meet safety standards and maintain a clean appearance.",
+    "category": "switches",
+    "images": ["trunk.png"]
+  },
+  {
+    "id": "47c12a5c-3352-4386-8c66-57a05983e313",
+    "title": "Wiring Cable",
+    "description": "Reliable and durable wiring cable for all your electrical needs. Made with high-quality materials for safe and efficient power transmission. Choose our wiring cable for seamless installation and long-lasting performance.",
+    "category": "switches",
+    "images": ["wiring-cable.png", "wiring-cable-2.png", "wiring-cable-3.png"]
   }
 ]
