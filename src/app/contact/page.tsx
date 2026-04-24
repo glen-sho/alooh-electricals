@@ -5,17 +5,17 @@ import React from "react";
 export default function Contact() {
    return (
       <div>
-         <div className="max-w-7xl mx-auto pt-40 pb-20">
-            <div className="grid grid-cols-[1.3fr_2fr] gap-4">
+         <div className="max-w-7xl mx-auto pt-10 lg:pt-40 pb-20 px-4">
+            <div className="grid lg:grid-cols-[1.3fr_2fr] gap-4">
                <div className="">
-                  <h1 className="text-7xl font-bold">Get in touch</h1>
+                  <h1 className="text-4xl lg:text-7xl font-bold">Get in touch</h1>
                   <p className="text-lg">
                      {` We'd like to hear from you, whether you have a question need support , or want to learnmore
                      aboutour services.`}
                   </p>
                   <Socials />
                </div>
-               <div className="grid grid-cols-3 gap-4">
+               <div className="grid lg:grid-cols-3 gap-8 lg:gap-4">
                   <div className="space-y-1">
                      <Phone className="bg-neutral-200/50 p-1 rounded-sm text-neutral-500" size={32} />
                      <h1 className="font-bold text-xl">Get in Touch</h1>

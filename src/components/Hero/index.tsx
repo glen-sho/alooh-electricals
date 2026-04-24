@@ -9,10 +9,10 @@ const heroItems = [
    {
       id: 1,
       image: "/landing3.webp",
-      title: "Shop Light Fixtures",
-      subtitle: "Quality lighting for every Nigerian home",
+      title: "Bamboo zigzag pattern basket",
+      subtitle: "interior",
    },
-   { id: 2, image: "/landing1.webp", title: "", subtitle: "" },
+   { id: 2, image: "/landing1.webp", title: "contemporary pendent lighting", subtitle: "interior" },
    { id: 3, image: "/landing2.webp", title: "", subtitle: "" },
 ];
 export default function Hero() {
@@ -34,14 +34,16 @@ export default function Hero() {
                   />
                   <div className="absolute h-full w-full bg-black/30"></div>
                   <div className="absolute text-center mx-auto z-10 p-4">
-                     <h1 className="text-6xl font-Linden_Hill font-bold text-white">{item.title}</h1>
+                     <h1 className="text-4xl lg:text-6xl font-Linden_Hill font-bold text-white capitalize">
+                        {item.title}
+                     </h1>
                      <p className="text-2xl text-white">{item.subtitle}</p>
                   </div>
                </CarouselItem>
             ))}
          </CarouselContent>
-         <CarouselPrevious className="left-20" />
-         <CarouselNext className="right-20" />
+         <CarouselPrevious className="left-2 lg:left-20" />
+         <CarouselNext className="right-2 lg:right-20" />
       </Carousel>
    );
 }

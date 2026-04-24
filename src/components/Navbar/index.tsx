@@ -2,6 +2,7 @@
 
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import Image from "next/image";
 import Socials from "../Socials";
@@ -18,6 +19,7 @@ export const navMenu = [
 
 export default function Navbar() {
    const [sidemenu, setSidemenu] = useState(false);
+   const pathname = usePathname();
    return (
       <header className="border-b border-neutral-200/70 z-50 bg-white fixed top-0 w-full">
          <div className="bg-[#a4e9d5] py-1 justify-center items-center ">
@@ -34,21 +36,32 @@ export default function Navbar() {
             <p className="text-center capitalize text-sm"> </p>
          </div>
          <nav className="mx-auto flex max-w-7xl items-center justify-between h-14 px-4">
-            <div className="flex lg:hidden">
+            <div className="flex lg:hidden z-50">
                <button onClick={() => setSidemenu(true)} aria-label="Open menu">
                   <Menu color="black" size={28} />
                </button>
-               <Sidebar isOpen={sidemenu} onClose={() => setSidemenu(false)} />
             </div>
+            <Sidebar isOpen={sidemenu} onClose={() => setSidemenu(false)} />
             <div className="hidden lg:flex gap-3">
                {navMenu.map((link) => (
-                  <Link key={link.id} href={link.url} className="uppercase font-semibold">
+                  <Link
+                     key={link.id}
+                     href={link.url}
+                     className={`uppercase hover:text-black duration-300 ${pathname === link.url ? "font-bold text-black" : "font-semibold"}`}
+                  >
                      {link.title}
                   </Link>
                ))}
             </div>
-            <div className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-80 lg:h-8">
-               <Image src={"/logo.png"} alt="logo" priority fill sizes="(max-width: 1024px) 192px, 320px" className="relative object-contain" />
+            <div className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-60 lg:h-8">
+               <Image
+                  src={"/logo.png"}
+                  alt="logo"
+                  priority
+                  fill
+                  sizes="(max-width: 1024px) 192px, 320px"
+                  className="relative object-contain"
+               />
             </div>
             <div className="hidden lg:flex gap-3">
                <Socials />
