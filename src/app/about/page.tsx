@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 export default function About() {
@@ -24,22 +23,24 @@ export default function About() {
    ];
 
    return (
-      <div className="mt-20">
-         <div className="h-[60vh] relative bg-[url(/about.jpg)] bg-cover bg-no-repeat parallex">
-            <h1 className="text-8xl text-white absolute -bottom-5 uppercase font-bold">About us</h1>
+      <div>
+         <div className="h-[25vh] lg:h-[60vh] relative bg-[url(/about.jpg)] bg-cover bg-no-repeat parallex">
+            <h1 className="text-6xl lg:text-8xl text-white absolute -bottom-3 lg:-bottom-5 uppercase font-bold">
+               About us
+            </h1>
          </div>
          <div className="bg-[#67494a]">
-            <div className="max-w-7xl mx-auto py-20 space-y-12">
+            <div className="max-w-7xl mx-auto py-20 space-y-12 p-4">
                <div className="text-neutral-300 space-y-4">
-                  <p className="text-2xl">
+                  <p className="text-xl lg:text-2xl">
                      Welcome to New Orient, where a rich history in the electrical goods industry meets a vision for a
                      brighter future. Founded in 2016 by the industry veteran, Alfred Kofi Gyan, New Orient is more than
                      just a company – it’s a commitment to quality, innovation, and community building.
                   </p>
                </div>
                <div className="text-neutral-300 space-y-4">
-                  <h1 className="text-5xl font-bold">Our Founder’s Legacy</h1>
-                  <p className="text-2xl">
+                  <h1 className="text-3xl lg:text-5xl font-bold">Our Founder’s Legacy</h1>
+                  <p className="text-xl lg:text-2xl">
                      Alfred Kofi Gyan, a luminary in the wholesale and retail electrical goods sector with over three
                      decades of experience, embarked on a journey to redefine the landscape. His expertise, garnered
                      over the years, is the cornerstone upon which New Orient was built. His vision was clear: to
@@ -51,10 +52,10 @@ export default function About() {
          </div>
          <div className="">
             <div className="max-w-7xl mx-auto py-20 space-y-12">
-               <div className="grid grid-cols-3 gap-4">
+               <div className="grid lg:grid-cols-3 gap-10 lg:gap-8 p-4">
                   {points.map((item) => (
                      <article key={item.id} className="space-y-2">
-                        <h1 className="font-bold text-2xl">{item.title}</h1>
+                        <h1 className="font-bold text-2xl lg:text-2xl">{item.title}</h1>
                         <p className="text-xl">{item.description}</p>
                      </article>
                   ))}
