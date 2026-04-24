@@ -26,10 +26,10 @@ export default function Products() {
       setItemsToShow((prev) => prev + 8);
    };
    return (
-      <div className="max-w-7xl mx-auto my-12 space-y-6 pb-24">
-         <div className="flex justify-between items-center">
+      <div className="max-w-7xl mx-auto my-12 space-y-6 pb-24 px-4">
+         <div className="lg:flex justify-between items-center space-y-4">
             <div className="flex gap-2 items-center">
-               <p className="font-semibold shrink-0">Filter by:</p>
+               <p className="font-semibold shrink-0 text-xl">Filter by:</p>
                <Select onValueChange={(e) => setSelectedCategory(e)}>
                   <SelectTrigger className="w-full min-w-56">
                      <SelectValue placeholder={selectedCategory} />
@@ -45,11 +45,11 @@ export default function Products() {
                   </SelectContent>
                </Select>
             </div>
-            <div className="">
-               <strong>{filteredProducts.length}</strong> {"  "}items
+            <div className="text-xl">
+               <strong>{filtered.length}</strong> {"  "}items
             </div>
          </div>
-         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4 gap-y-12">
             {filteredProducts.map((product) => {
                const slug = toSlug(product.title);
                return (

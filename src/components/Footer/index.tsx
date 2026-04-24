@@ -29,7 +29,7 @@ export default function Footer() {
                         <Link
                            key={link.id}
                            href={link.url}
-                           className="capitalize text-mauve-400 hover:text-mauve-300 text-md block"
+                           className="capitalize text-mauve-400 hover:text-mauve-300 text-lg block"
                         >
                            {link.title}
                         </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                            <span className="text-white font-semibold">+233 30 338 9976</span>
                         </div>
                      </div>
-                     <Socials />
+                     <Socials color="#79697b" />
                   </div>
                </div>
             </div>

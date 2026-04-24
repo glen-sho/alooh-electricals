@@ -171,7 +171,7 @@ function CarouselPrevious({ className, variant = "outline", ...props }: React.Co
          variant={variant}
          size={"lg"}
          className={cn(
-            "absolute touch-manipulation rounded-full bg-neutral-500/30 border-neutral-400  hover:bg-neutral-500/70",
+            "absolute touch-manipulation rounded-full bg-neutral-500/30 border-neutral-300  hover:bg-neutral-500/70",
             orientation === "horizontal"
                ? "top-1/2 -left-12 -translate-y-1/2"
                : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -181,7 +181,7 @@ function CarouselPrevious({ className, variant = "outline", ...props }: React.Co
          onClick={scrollPrev}
          {...props}
       >
-         <ChevronLeftIcon className="text-neutral-400" />
+         <ChevronLeftIcon className="text-neutral-300" />
          <span className="sr-only">Previous slide</span>
       </Button>
    );
@@ -196,7 +196,7 @@ function CarouselNext({ className, variant = "outline", ...props }: React.Compon
          variant={variant}
          size={"lg"}
          className={cn(
-            "absolute touch-manipulation rounded-full bg-neutral-500/30 border-neutral-400 hover:bg-neutral-500/70",
+            "absolute touch-manipulation rounded-full bg-neutral-500/30 border-neutral-300 hover:bg-neutral-500/70",
             orientation === "horizontal"
                ? "top-1/2 -right-12 -translate-y-1/2"
                : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -206,7 +206,7 @@ function CarouselNext({ className, variant = "outline", ...props }: React.Compon
          onClick={scrollNext}
          {...props}
       >
-         <ChevronRightIcon className="text-neutral-400" />
+         <ChevronRightIcon className="text-neutral-300" />
          <span className="sr-only">Next slide</span>
       </Button>
    );
