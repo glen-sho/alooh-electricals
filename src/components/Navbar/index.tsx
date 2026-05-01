@@ -22,7 +22,7 @@ export default function Header() {
    const pathname = usePathname();
 
    return (
-      <header className="w-full sticky top-0 z-50 font-inter">
+      <header className="w-full sticky top-0 z-50">
          <div className="py-1.5 px-4 bg-announcementBar/50 backdrop-blur-sm">
             <Carousel
                plugins={[Autoplay({ delay: 3000 })]}
