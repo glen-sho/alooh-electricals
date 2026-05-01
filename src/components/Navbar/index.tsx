@@ -1,70 +1,86 @@
 "use client";
-
-import { Menu } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import Image from "next/image";
-import Socials from "../Socials";
+import { Menu } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Sidebar from "../Sidebar/Index";
+import ActionButton, { PHONE } from "../ActionButtons";
 
-export const navMenu = [
-   { id: 1, title: "home", url: "/" },
-   { id: 2, title: "about", url: "/about" },
-   { id: 3, title: "our factory", url: "/our-factory" },
-   { id: 4, title: "contact", url: "/contact" },
+export const navLinks = [
+   { name: "Home", href: "/" },
+   { name: "Products", href: "/products" },
+   { name: "Our Factory", href: "/our-factory" },
+   { name: "About", href: "/about" },
+   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
-   const [sidemenu, setSidemenu] = useState(false);
+export default function Header() {
+   const [menuOpen, setMenuOpen] = useState(false);
    const pathname = usePathname();
+
    return (
-      <header className="border-b border-neutral-200/70 z-50 bg-white fixed top-0 w-full">
-         <div className="bg-[#a4e9d5] py-1 justify-center items-center ">
+      <header className="w-full sticky top-0 z-50 font-inter">
+         <div className="py-1.5 px-4 bg-announcementBar/50 backdrop-blur-sm">
             <Carousel
                plugins={[Autoplay({ delay: 3000 })]}
                opts={{ loop: true }}
                className=" left-1/2 -translate-x-1/2 w-fit"
             >
-               <CarouselContent>
+               <CarouselContent className="text-center text-md self-center">
+                  <CarouselItem className="">
+                     <p>
+                        &#9889; Built on 40 years. Building Ghana&apos;s future.{" "}
+                        <strong>&middot; Call or whatsapp: {PHONE}</strong>
+                     </p>
+                  </CarouselItem>
                   <CarouselItem className="text-center">Welcome to our store</CarouselItem>
-                  <CarouselItem className="text-center">Made in Ghana, Trusted Worldwide</CarouselItem>
+                  <CarouselItem className="text-center uppercase font-bold">
+                     Made in Ghana, Trusted Worldwide
+                  </CarouselItem>
                </CarouselContent>
             </Carousel>
-            <p className="text-center capitalize text-sm"> </p>
          </div>
-         <nav className="mx-auto flex max-w-7xl items-center justify-between h-14 px-4">
-            <div className="flex lg:hidden z-50">
-               <button onClick={() => setSidemenu(true)} aria-label="Open menu">
-                  <Menu color="black" size={28} />
+
+         <nav className="bg-white border-b border-gray-100 px-4 md:px-8 py-3">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+               <div className="hidden lg:flex items-center gap-4 flex-1">
+                  {navLinks.map((link) => (
+                     <Link
+                        key={link.name}
+                        href={link.href}
+                        className={`uppercase hover:text-black text-sm whitespace-nowrap duration-300 ${pathname === link.href ? "font-bold text-black" : "font-semibold"}`}
+                     >
+                        {link.name}
+                     </Link>
+                  ))}
+               </div>
+
+               <button
+                  className="lg:hidden p-1.5 text-gray-600"
+                  onClick={() => setMenuOpen(true)}
+                  aria-label="Open menu"
+               >
+                  <Menu size={22} />
                </button>
-            </div>
-            <Sidebar isOpen={sidemenu} onClose={() => setSidemenu(false)} />
-            <div className="hidden lg:flex gap-3">
-               {navMenu.map((link) => (
-                  <Link
-                     key={link.id}
-                     href={link.url}
-                     className={`uppercase hover:text-black duration-300 ${pathname === link.url ? "font-bold text-black" : "font-semibold"}`}
-                  >
-                     {link.title}
-                  </Link>
-               ))}
-            </div>
-            <div className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-60 lg:h-8">
-               <Image
-                  src={"/logo.png"}
-                  alt="logo"
-                  priority
-                  fill
-                  sizes="(max-width: 1024px) 192px, 320px"
-                  className="relative object-contain"
-               />
-            </div>
-            <div className="hidden lg:flex gap-3">
-               <Socials />
+               <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+
+               <div className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-60 lg:h-8">
+                  <Image
+                     src={"/logo.png"}
+                     alt="logo"
+                     priority
+                     fill
+                     sizes="(max-width: 1024px) 192px, 320px"
+                     className="relative object-contain"
+                  />
+               </div>
+
+               <div className="hidden md:block">
+                  <ActionButton />
+               </div>
             </div>
          </nav>
       </header>

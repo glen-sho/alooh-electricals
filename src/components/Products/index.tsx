@@ -1,74 +1,50 @@
 "use client";
 import React, { useState } from "react";
-import productsData from "@/productData.json";
-import { ProductCard } from "../ProductCard";
+import { ArrowRight } from "lucide-react";
+import ProductCard from "../ProductCard";
+import { categories, DisplayProductsType, products } from "@/data/products";
+import CategoryTab from "../CategoryTab";
 import Link from "next/link";
-import { toSlug } from "@/lib/utils";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-import { Button } from "../ui/button";
 
 export default function Products() {
-   const [selectedCategory, setSelectedCategory] = useState("All");
-   const [itemsToShow, setItemsToShow] = useState(12);
-   const filtered =
-      selectedCategory === "All"
-         ? productsData
-         : productsData.filter((product) => product.category === selectedCategory);
+   const [activeFilter, setActiveFilter] = useState("All");
 
-   const filteredProducts = filtered.slice(0, itemsToShow);
+   const displayProducts =
+      activeFilter === "All" ? products.slice(0, 12) : products.filter((p) => p.category === activeFilter).slice(0, 12);
 
-   const categories = ["All", ...new Set(productsData.map((product) => product.category))];
-
-   const moreToLoad = filtered.length > itemsToShow;
-
-   const handleLoadMore = () => {
-      if (!moreToLoad) return;
-      setItemsToShow((prev) => prev + 8);
-   };
    return (
-      <div className="max-w-7xl mx-auto my-12 space-y-6 pb-24 px-4">
-         <div className="lg:flex justify-between items-center space-y-4">
-            <div className="flex gap-2 items-center">
-               <p className="font-semibold shrink-0 text-xl">Filter by:</p>
-               <Select onValueChange={(e) => setSelectedCategory(e)}>
-                  <SelectTrigger className="w-full min-w-56">
-                     <SelectValue placeholder={selectedCategory} />
-                  </SelectTrigger>
-                  <SelectContent>
-                     <SelectGroup>
-                        {categories.map((cat) => (
-                           <SelectItem value={cat} key={cat} className="cursor-pointer text-lg capitalize">
-                              {cat}
-                           </SelectItem>
-                        ))}
-                     </SelectGroup>
-                  </SelectContent>
-               </Select>
+      <section className="py-20 bg-white">
+         <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-3">
+               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Products</h2>
+               <Link href="/products" className="font-bold flex items-center gap-1 hover:underline whitespace-nowrap">
+                  View all 28 products <ArrowRight size={14} />
+               </Link>
             </div>
-            <div className="text-xl">
-               <strong>{filtered.length}</strong> {"  "}items
+            <p className="text-gray-500 mb-8 max-w-2xl leading-relaxed">
+               Every product is quality checked before it leaves our Tema facility. WhatsApp or email us directly for
+               pricing and availability. We respond the same day.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+               <CategoryTab categories={categories} setActiveFilter={setActiveFilter} activeFilter={activeFilter} />
             </div>
-         </div>
-         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4 gap-y-12">
-            {filteredProducts.map((product) => {
-               const slug = toSlug(product.title);
-               return (
-                  <Link href={`/${slug}`} key={product.id}>
-                     <ProductCard title={product.title} description={product.description} images={product.images} />
-                  </Link>
-               );
-            })}
-         </div>
-         {moreToLoad && (
-            <div className="flex items-center justify-center mt-15">
-               <Button
-                  className="border-neutral-300 py-6 rounded-md font-semibold hover:bg-mist-100/50 cursor-pointer w-70 text-lg"
-                  onClick={handleLoadMore}
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+               {displayProducts.slice(0, 10).map((product: DisplayProductsType) => (
+                  <ProductCard key={product.id} product={product} />
+               ))}
+            </div>
+
+            <div className="text-center mt-10">
+               <Link
+                  href="/products"
+                  className="inline-flex items-center bg-primary gap-2 text-white px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
                >
-                  Load More
-               </Button>
+                  Browse Full Catalogue <ArrowRight size={15} />
+               </Link>
             </div>
-         )}
-      </div>
+         </div>
+      </section>
    );
 }

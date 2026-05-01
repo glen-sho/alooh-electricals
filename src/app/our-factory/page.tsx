@@ -1,11 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Stats from "@/components/Stats";
 
 export default function OurFactory() {
    return (
       <div>
-         <div className="h-[19vh] lg:h-[60vh] relative bg-[url(/factory.webp)] bg-contain lg:bg-cover bg-no-repeat parallex">
+         <div className="h-[25vh] lg:h-[60vh] relative parallex bg-background">
+            {/* <div className="bg-black absolute w-full h-full opacity-60"></div> */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-20 mx-auto my-auto text-center space-y-4  text-white">
+               <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#16a34a" }} />
+               <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#86efac" }}>
+                  Home of the New Orient Brand &nbsp;&middot;&nbsp; Tema, Ghana
+               </span>
+
+               <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                  Where New Orient Is Made. <span style={{ color: "#16a34a" }}>Built Right Here in Tema, Ghana.</span>
+               </h1>
+               <p className="">
+                  Opened in 2022, our Tema facility is the home of the New Orient brand. Every conduit box that carries
+                  the New Orient name was punched, formed and quality checked at this factory. By our team. On our
+                  machine. In Ghana. We were the first. We will not be the last.
+               </p>
+               <Stats />
+            </div>
             <h1 className="text-6xl lg:text-8xl text-white absolute -bottom-3 lg:-bottom-5 uppercase font-bold">
                Factory
             </h1>
