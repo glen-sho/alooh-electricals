@@ -1,39 +1,167 @@
+"use client";
 import Socials from "@/components/Socials";
-import { Briefcase, MapPin, Phone } from "lucide-react";
-import React from "react";
+import { ADDRESS, EMAIL, PHONE, WA_GENERAL } from "@/data/products";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
+import React, { ChangeEvent, useState } from "react";
+import { toast } from "sonner";
 
 export default function Contact() {
+   const [loading, setLoading] = useState(false);
+   const [form, setForm] = useState<Record<string, string>>({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+   });
+
+   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+      setForm({ ...form, [e.target.name]: e.target.value });
+   }
+
+   function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
+      e.preventDefault();
+      setLoading(true);
+      const subject = encodeURIComponent(`Website Enquiry from ${form.name}`);
+      const body = encodeURIComponent(
+         `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nMessage:\n${form.message}`,
+      );
+      if (typeof window !== "undefined") {
+         window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      }
+      toast.success("Your email client should now be open.", { description: ` If not, email us directly at ${EMAIL}` });
+      setLoading(false);
+   }
+
    return (
       <div>
-         <div className="max-w-7xl mx-auto pt-10 lg:pt-40 pb-20 px-4">
-            <div className="grid lg:grid-cols-[1.3fr_2fr] gap-4">
-               <div className="">
-                  <h1 className="text-4xl lg:text-7xl font-bold">Get in touch</h1>
+         <div className="max-w-7xl mx-auto pt-10 lg:pt-12 pb-20">
+            <div className="">
+               <div className="space-y-2">
+                  <h1 className="text-3xl lg:text-4xl font-bold">Get in touch</h1>
                   <p className="text-lg">
                      {` We'd like to hear from you, whether you have a question need support , or want to learnmore
                      aboutour services.`}
                   </p>
-                  <Socials />
-               </div>
-               <div className="grid lg:grid-cols-3 gap-8 lg:gap-4">
-                  <div className="space-y-1">
-                     <Phone className="bg-neutral-200/50 p-1 rounded-sm text-neutral-500" size={32} />
-                     <h1 className="font-bold text-xl">Get in Touch</h1>
-                     <p className="text-lg">Telephone: +233 24 408 1474</p>
-                     <p className="text-lg">Landline: +233 30 338 9976</p>
-                     <p className="font-bold text-blue-600 text-lg">hello@neworientafrica.com</p>
-                  </div>
-                  <div className="space-y-1">
-                     <MapPin className="bg-neutral-200/50 p-1 rounded-sm text-neutral-500" size={32} />
-                     <h1 className="font-bold text-xl">Visit Us</h1>
-                     <p className="text-lg">4870 Sparrow Close Tema, Ghana</p>
-                     <p className="text-lg"> Monday to Friday: 9am to 6pm</p>
-                  </div>
-                  <div className="space-y-1">
-                     <Briefcase className="bg-neutral-200/50 p-1 rounded-sm text-neutral-500" size={32} />
-                     <h1 className="font-bold text-xl">Work with Us?</h1>
-                     <p className="text-lg">Together, we’ll shape a brighter future for Ghana’s electrical industry.</p>
-                     <p className="font-bold text-blue-600 text-lg">glen@neworientafrica.com</p>
+
+                  <div className="grid grid-cols-2 items-center gap-12">
+                     <div className="my-4">
+                        <h2 className="text-xl font-medium mb-6">Send us a message</h2>
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                           {[
+                              {
+                                 label: "Name",
+                                 name: "name",
+                                 type: "text",
+                                 required: true,
+                                 placeholder: "Your full name",
+                              },
+                              {
+                                 label: "Email",
+                                 name: "email",
+                                 type: "email",
+                                 required: true,
+                                 placeholder: "your@email.com",
+                              },
+                              {
+                                 label: "Phone Number",
+                                 name: "phone",
+                                 type: "tel",
+                                 required: false,
+                                 placeholder: "+233 ...",
+                              },
+                           ].map((f) => (
+                              <div key={f.name}>
+                                 <label className="block text-xs font-medium mb-1.5 uppercase tracking-wide">
+                                    {f.label} {f.required && "*"}
+                                 </label>
+                                 <input
+                                    type={f.type}
+                                    name={f.name}
+                                    required={f.required}
+                                    value={form[f.name]}
+                                    onChange={handleChange}
+                                    placeholder={f.placeholder}
+                                    className="w-full border border-gray-200 rounded-[7px] px-3.5 py-2.5 text-sm outline-none focus:bg-stone-100"
+                                 />
+                              </div>
+                           ))}
+                           <div>
+                              <label className="block text-xs font-medium text-gray-500 mb-1.5 uppercase tracking-wide">
+                                 Message *
+                              </label>
+                              <textarea
+                                 name="message"
+                                 required
+                                 rows={5}
+                                 value={form.message}
+                                 onChange={handleChange}
+                                 placeholder="How can we help you?"
+                                 className="w-full border border-gray-200 rounded-[7px] px-3.5 py-2.5 text-sm text-gray-900 outline-none resize-none placeholder-gray-300"
+                                 style={{ backgroundColor: "#fafafa" }}
+                              />
+                           </div>
+                           <p className="text-gray-400 text-sm text-left">
+                              * Opens your email client addressed to {EMAIL}
+                           </p>
+                           <button
+                              type="submit"
+                              className="w-fit text-white py-3 rounded-[7px] cursor-pointer text-sm font-medium hover:opacity-90 transition-opacity bg-primary px-6"
+                           >
+                              {loading ? <p className="animate-pulse"> Sending...</p> : "Send Message"}
+                           </button>
+                        </form>
+                     </div>
+                     <div className="space-y-4">
+                        <div className="border border-gray-200 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-100">
+                              <MessageCircle size={17} className="text-mist-500" />
+                           </div>
+                           <div>
+                              <p className="font-bold uppercase tracking-widest mb-1.5">Phone / WhatsApp</p>
+                              <a
+                                 href={WA_GENERAL}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="block font-medium"
+                              >
+                                 {PHONE}
+                              </a>
+                              <p className="text-sm">Mon&ndash;Fri 8am&ndash;6pm</p>
+                              <a
+                                 href={WA_GENERAL}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="inline-block mt-2.5 px-3.5 py-1.5 rounded-md text-xs font-medium text-white hover:opacity-90 transition-opacity bg-whatsapp"
+                              >
+                                 WhatsApp Us
+                              </a>
+                           </div>
+                        </div>
+
+                        <div className="border border-gray-200 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-100">
+                              <MapPin size={17} className="text-mist-500" />
+                           </div>
+                           <div>
+                              <p className="font-bold uppercase tracking-widest mb-1.5">Visit Us</p>
+                              <p className="text-gray-700 leading-relaxed">{ADDRESS}</p>
+                           </div>
+                        </div>
+
+                        <div className="border border-gray-200 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0">
+                              <Mail size={17} />
+                           </div>
+                           <div>
+                              <p className="text-sm font-bold uppercase tracking-widest mb-1.5">Email Us</p>
+                              <a href={`mailto:${EMAIL}`} className="hover:underline font-bold">
+                                 {EMAIL}
+                              </a>
+                              <p className="mt-0.5">We reply the same day</p>
+                           </div>
+                        </div>
+                        <Socials />
+                     </div>
                   </div>
                </div>
             </div>
