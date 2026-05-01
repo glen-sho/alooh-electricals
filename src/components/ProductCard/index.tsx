@@ -1,27 +1,66 @@
-import Image from "next/image";
+import { DisplayProductsType } from "@/data/products";
+import Link from "next/link";
 
-interface ProductCardProps {
-   title: string;
-   description: string;
-   images: string[];
-}
+export default function ProductCard({ product }: { product: DisplayProductsType }) {
+   const { name, category, badge, madeInGhana, comingSoon, image } = product;
 
-export function ProductCard({ title, images }: ProductCardProps) {
+   // Resolve badge label and colours
+   let badgeLabel = badge.toUpperCase();
+   let badgeBg = "#e5e7eb";
+   let badgeColor = "#374151";
+
+   if (madeInGhana) {
+      badgeLabel = "MADE IN GHANA";
+      badgeBg = "#16a34a";
+      badgeColor = "#fff";
+   }
+   if (comingSoon) {
+      badgeLabel = "COMING SOON";
+      badgeBg = "#d97706";
+      badgeColor = "#fff";
+   }
+   if (badge === "New Arrival") {
+      badgeBg = "#2563eb";
+      badgeColor = "#fff";
+   }
+   if (badge === "Top Rated") {
+      badgeBg = "#7c3aed";
+      badgeColor = "#fff";
+   }
+   if (badge === "Popular") {
+      badgeBg = "#0369a1";
+      badgeColor = "#fff";
+   }
+
    return (
-      <div className="">
-         <div className="relative mx-auto w-full max-w-sm pt-0">
-            <div className="relative h-48 lg:h-60 overflow-hidden bg-mist-100 items-center flex justify-center group">
-               <div className="bg-black absolute right-0 left-0 w-full h-full opacity-0 group-hover:opacity-5 duration-400 transition-opacity"></div>
-               <Image
-                  src={`/${images[0]}`}
-                  alt={title}
-                  priority
-                  className="object-contain group-hover:scale-105 duration-300 transition-all w-24! h-24! lg:w-32! lg:h-32! mx-auto my-auto"
-                  fill
-                  sizes="(max-width: 1024px) 96px, 128px"
-               />
-            </div>
-            <p className="font-Andada font-medium text-md lg:text-lg pt-2 hover:underline duration-400"> {title}</p>
+      <div
+         className="flex flex-col overflow-hidden"
+         style={{
+            borderColor: "#e8e8e8",
+            opacity: comingSoon ? 0.6 : 1,
+            backgroundColor: "#fff",
+         }}
+      >
+         <Link href={`/${name}`} className="relative bg-[#f5f5f3] aspect-4/3 overflow-hidden h-60">
+            <img
+               src={image}
+               alt={name}
+               className={`w-full h-full object-cover${comingSoon ? " grayscale" : ""}`}
+               loading="lazy"
+            />
+            {/* <span
+               className="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-widest px-2 py-1"
+               style={{ backgroundColor: badgeBg, color: badgeColor }}
+            >
+               {badgeLabel}
+            </span> */}
+         </Link>
+
+         <div className="flex flex-col flex-1 py-4 gap-1">
+            <Link href={`/${name}`} className="text-sm font-bold text-gray-900 leading-snug uppercase">
+               {name}
+            </Link>
+            <span className="text-[10px] font-bold uppercase tracking-widest">{category}</span>
          </div>
       </div>
    );

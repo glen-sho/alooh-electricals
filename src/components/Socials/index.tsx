@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { ReactElement } from "react";
+import Link from "next/link";
 
 interface SocialItem {
    id: number;
@@ -20,9 +21,9 @@ export default function Socials({ color = "black" }: { color?: string }) {
    return (
       <div className="flex gap-3 items-center py-4 ">
          {socials.map((icon) => (
-            <a href={icon.link} key={icon.id} className={`text-${color} hover:text-neutral-500 duration-300`}>
+            <Link href={icon.link} key={icon.id} className={`text-${color} hover:text-neutral-500 duration-300`}>
                {icon.icon}
-            </a>
+            </Link>
          ))}
       </div>
    );
