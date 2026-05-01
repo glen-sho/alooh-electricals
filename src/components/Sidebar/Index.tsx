@@ -5,8 +5,9 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { X } from "lucide-react";
-import { navMenu } from "../Navbar";
 import Socials from "../Socials";
+import { navLinks } from "../Navbar";
+import ActionButton from "../ActionButtons";
 
 interface SidebarProps {
    isOpen: boolean;
@@ -18,7 +19,11 @@ function subscribe() {
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-   const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+   const mounted = useSyncExternalStore(
+      subscribe,
+      () => true,
+      () => false,
+   );
 
    useEffect(() => {
       if (isOpen) {
@@ -57,18 +62,18 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
 
             <nav className="flex flex-col gap-1 px-4 py-6 flex-1">
-               {navMenu.map((link) => (
+               {navLinks.map((link) => (
                   <Link
-                     key={link.id}
-                     href={link.url}
+                     key={link.href}
+                     href={link.href}
                      onClick={onClose}
                      className="uppercase font-semibold text-sm tracking-wide py-3 px-3 rounded-md hover:bg-[#a4e9d5]/30 transition-colors"
                   >
-                     {link.title}
+                     {link.name}
                   </Link>
                ))}
+               <ActionButton dr="col" />
             </nav>
-
             <div className="px-5 pb-8 border-t border-neutral-200 pt-4">
                <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Follow us</p>
                <Socials />

@@ -10,6 +10,12 @@
    --font-Linden_Hill: var(--font-Linden_Hill);
    --font-Quattrocento_Sans: var(--font-Quattrocento_Sans);
    --font-Andada: var(--font-Andada);
+   --color-light-green: #86efac;
+   --color-primary: #061b1f;
+   --color-announcementBar: #a4e9d5;
+   --color-whatsapp: #16a34a;
+   --color-footer: #3d3d3b;
+   --color-background: #0a1e14;
 }
 
 body {
