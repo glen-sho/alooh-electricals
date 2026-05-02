@@ -11,7 +11,7 @@ export default function CategoryTab({
    activeFilter: string;
 }) {
    return (
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4 ">
          {categories.map((cat) => (
             <button
                key={cat}
@@ -19,7 +19,7 @@ export default function CategoryTab({
                className={cn(
                   activeFilter === cat
                      ? "bg-primary text-white border-primary"
-                     : "bg-[#f5f5f3] text-[#555] border-[#e8e8e8]",
+                     : "border-[#e8e8e8] hover:bg-neutral-100",
                   "px-4 py-1.5 text-sm font-medium border transition-colors cursor-pointer",
                )}
             >
