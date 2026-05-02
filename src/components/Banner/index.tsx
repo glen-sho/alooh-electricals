@@ -20,15 +20,18 @@ export default function Banner() {
          <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="text-center mb-12">
                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What We Stand For</h2>
-               <p className="text-gray-500 text-sm max-w-xl mx-auto">
+               <p className="text-gray-500 max-w-xl mx-auto">
                   Three commitments that guide every product we make and every relationship we build.
                </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
                {pillars.map((p) => (
-                  <div key={p.title} className="bg-white rounded-[8px] border border-gray-100 p-7">
+                  <div
+                     key={p.title}
+                     className="bg-white rounded-lg border border-gray-100 p-7 shadow-sm shadow-stone-200"
+                  >
                      <div className="flex items-center gap-2.5 mb-4">
-                        <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#16a34a" }} />
+                        <span className="w-2 h-2 rounded-full shrink-0 bg-primary" />
                         <h3 className="font-bold text-gray-900">{p.title}</h3>
                      </div>
                      <p className="text-sm text-gray-600 leading-relaxed">{p.body}</p>

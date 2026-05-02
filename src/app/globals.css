@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 :root {
-   --text: #545454;
+   --text: #3e3e3e;
 }
 
 @theme inline {
@@ -11,7 +11,7 @@
    --font-Quattrocento_Sans: var(--font-Quattrocento_Sans);
    --font-Andada: var(--font-Andada);
    --color-light-green: #86efac;
-   --color-primary: #061b1f;
+   --color-primary: #7a9e7e;
    --color-announcementBar: #a4e9d5;
    --color-whatsapp: #16a34a;
    --color-footer: #3d3d3b;
@@ -28,15 +28,3 @@ body {
 .parallex {
    background-attachment: fixed;
 }
-
-/* @layer base {
-   * {
-      @apply border-border outline-ring/50;
-   }
-   body {
-      @apply bg-background text-foreground;
-   }
-   html {
-      @apply font-sans;
-   }
-} */
