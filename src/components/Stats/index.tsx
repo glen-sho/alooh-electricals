@@ -8,14 +8,11 @@ const heroStats = [
 ];
 export default function Stats() {
    return (
-      <div
-         className="grid grid-cols-2 sm:grid-cols-4 gap-5 pt-6"
-         style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
-      >
+      <div className="grid grid-cols-2 sm:grid-cols-4">
          {heroStats.map((s) => (
             <div key={s.label}>
-               <p className="text-2xl font-bold text-red-400">{s.number}</p>
-               <p className="text-sm text-white mt-0.5 leading-snug">{s.label}</p>
+               <p className="text-4xl font-bold">{s.number}</p>
+               <p className="mt-0.5 leading-snug text-sm">{s.label}</p>
             </div>
          ))}
       </div>

@@ -17,29 +17,29 @@ export default function Products() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-3">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Our Products
-          </h2>
+        {/* <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-3">
+               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Products</h2>
+               <Link href="/products" className="font-bold flex items-center gap-1 hover:underline whitespace-nowrap">
+                  View all 28 products <ArrowRight size={14} />
+               </Link>
+            </div>
+            <p className="text-gray-500 mb-8 max-w-2xl leading-relaxed">
+               Every product is quality checked before it leaves our Tema facility. WhatsApp or email us directly for
+               pricing and availability. We respond the same day.
+            </p> */}
+
+        <div className="flex flex-wrap gap-2 mb-8 border-b border-mist-200 justify-between items-start">
+          <CategoryTab
+            categories={categories}
+            setActiveFilter={setActiveFilter}
+            activeFilter={activeFilter}
+          />
           <Link
             href="/products"
             className="font-bold flex items-center gap-1 hover:underline whitespace-nowrap"
           >
             View all {products.length} products <ArrowRight size={14} />
           </Link>
-        </div>
-        <p className="text-gray-500 mb-8 max-w-2xl leading-relaxed">
-          Every product is quality checked before it leaves our Tema facility.
-          WhatsApp or email us directly for pricing and availability. We respond
-          the same day.
-        </p>
-
-        <div className="flex flex-wrap gap-2 mb-8">
-          <CategoryTab
-            categories={categories}
-            setActiveFilter={setActiveFilter}
-            activeFilter={activeFilter}
-          />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

@@ -20,7 +20,7 @@ export default function CategoryTab({
           className={cn(
             activeFilter === value
               ? "bg-primary text-white border-primary"
-              : "bg-[#f5f5f3] text-[#555] border-[#e8e8e8]",
+              : "border-[#e8e8e8] hover:bg-neutral-100",
             "px-4 py-1.5 text-sm font-medium border transition-colors cursor-pointer",
           )}
         >
