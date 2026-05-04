@@ -48,12 +48,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
          />
 
          <aside
-            className={`fixed top-0 left-0 z-9999 h-full w-72 bg-white shadow-xl flex flex-col transition-transform duration-300 ${
+            className={`fixed top-0 left-0 z-9999 h-full w-80 bg-white shadow-xl flex flex-col transition-transform duration-300 ${
                isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
          >
             <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-200">
-               <div className="relative w-36 h-6">
+               <div className="relative w-40 h-6">
                   <Image src="/logo.png" alt="logo" fill sizes="144px" className="object-contain" priority />
                </div>
                <button onClick={onClose} aria-label="Close menu">

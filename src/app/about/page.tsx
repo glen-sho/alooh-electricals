@@ -53,25 +53,22 @@ export default function About() {
 
    return (
       <div>
-         <div className="h-[25vh] lg:h-[60vh] relative bg-[url(/about2.avif)] bg-cover bg-no-repeat parallex">
-            <div className="bg-black absolute w-full h-full opacity-60"></div>
-            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 mx-auto my-auto text-center  text-white">
-               <h1 className="text-white text-lg font-bold">
+         <div className=" relative parallex bg-navy_blue py-12">
+            <div className="mx-auto my-auto text-center space-y-4 text-white">
+               <h1 className="text-4xl lg:text-5xl text-white uppercase font-bold">Our Story</h1>
+               <h1 className="text-primary text-sm font-bold">
                   FROM TEMA TO THE WORLD · 40 YEARS OF ELECTRICAL EXCELLENCE
                </h1>
-               <p className="text-lg">Built on 40 Years. Building Ghana's Future.</p>
+               <p className="text-lg font-light">Built on 40 Years. Building Ghana's Future.</p>
             </div>
-            <h1 className="text-6xl lg:text-8xl text-white absolute -bottom-3 lg:-bottom-5 uppercase font-bold">
-               Our Story
-            </h1>
          </div>
          <div className="">
             <div className="max-w-7xl mx-auto py-20 space-y-12 p-4">
-               <div className="grid md:grid-cols-[2fr_1fr] gap-12">
+               <div className="grid md:grid-cols-[1.3fr_1fr] gap-12">
                   <div className="space-y-4">
-                     <h1 className="text-lg uppercase font-semibold">Founder · Alfred Kofi Gyan & his wife</h1>
+                     <h1 className="uppercase font-semibold">Founder · Alfred Kofi Gyan & his wife</h1>
                      <h1 className="text-3xl font-bold">A Legacy Built Over Four Decades</h1>
-                     <p className="text-xl lg:text-xl">
+                     <p className="">
                         Alfred Kofi Gyan did not build Alooh Electricals overnight and he did not build it alone.
                         Together with his wife, he started in the 1980s trading car tyres in Ghana's most difficult
                         economic era.
@@ -127,14 +124,14 @@ export default function About() {
                   </div>
                </div>
             </div>
-            <section className="py-20 bg-stone-100">
+            <section className="py-20 bg-stone-200/60">
                <div className="max-w-7xl mx-auto">
                   <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">Our Journey</h2>
-                  <div className="space-y-3 flex gap-2">
+                  <div className="space-y-3 md:flex gap-2 px-4 md:px-0">
                      {timeline.map((item) => (
                         <div
                            key={item.date}
-                           className="gap-5 bg-white rounded-lg border border-gray-100 p-5 space-y-4 shadow-xl shadow-stone-200/30 h-60"
+                           className="gap-5 bg-white rounded-lg border border-gray-100 p-5 space-y-4 shadow-xl shadow-stone-200/30 md:h-60"
                         >
                            <div className="shrink-0 pt-0.5">
                               <span className="font-bold text-sm px-2.5 py-1 rounded-sm text-white whitespace-nowrap bg-primary">
@@ -168,7 +165,6 @@ export default function About() {
                </div>
             </section>
          </div>
-         <CTASection />
       </div>
    );
 }

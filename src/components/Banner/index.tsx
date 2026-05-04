@@ -16,7 +16,7 @@ const pillars = [
 ];
 export default function Banner() {
    return (
-      <section style={{ backgroundColor: "#f5f5f3" }} className="py-20">
+      <section className="py-20 bg-stone-200/60">
          <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="text-center mb-12">
                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">What We Stand For</h2>

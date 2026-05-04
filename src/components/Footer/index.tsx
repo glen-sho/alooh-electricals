@@ -17,8 +17,8 @@ export default function Footer() {
       <div className="">
          <CTASection />
          <footer className="text-stone-300 bg-footer">
-            <div className="max-w-7xl mx-auto pt-24 pb-4">
-               <div className="grid grid-cols-[1fr_1.5fr] gap-10">
+            <div className="max-w-7xl mx-auto pt-24 pb-4 px-4 md:px-0">
+               <div className="grid md:grid-cols-[1fr_1.5fr] gap-10">
                   <div className="space-y-5">
                      <div className="space-y-3">
                         <Image
@@ -37,50 +37,52 @@ export default function Footer() {
                      </p>
                      <Newsletter />
                   </div>
-                  <div className="grid grid-cols-3">
-                     <div>
-                        <p className="font-bold uppercase tracking-widest mb-4">Explore</p>
-                        <ul className="space-y-2.5">
-                           {[
-                              { label: "Home", href: "/" },
-                              { label: "About", href: "/about" },
-                              { label: "Our Factory", href: "/factory" },
-                              { label: "All Products", href: "/products" },
-                              { label: "Contact", href: "/contact" },
-                           ].map((l) => (
-                              <li key={l.label}>
-                                 <Link href={l.href} className="text-sm hover:text-white transition-colors">
-                                    {l.label}
-                                 </Link>
-                              </li>
-                           ))}
-                        </ul>
-                     </div>
+                  <div className="grid md:grid-cols-2 gap-8">
+                     <div className="grid grid-cols-2">
+                        <div>
+                           <p className="font-bold uppercase tracking-widest mb-4">Explore</p>
+                           <ul className="space-y-2.5">
+                              {[
+                                 { label: "Home", href: "/" },
+                                 { label: "About", href: "/about" },
+                                 { label: "Our Factory", href: "/factory" },
+                                 { label: "All Products", href: "/products" },
+                                 { label: "Contact", href: "/contact" },
+                              ].map((l) => (
+                                 <li key={l.label}>
+                                    <Link href={l.href} className="text-sm hover:text-white transition-colors">
+                                       {l.label}
+                                    </Link>
+                                 </li>
+                              ))}
+                           </ul>
+                        </div>
 
-                     <div>
-                        <p className="font-bold uppercase tracking-widest mb-4">Support</p>
-                        <ul className="space-y-2.5">
-                           {[
-                              { label: "Get a Quote", href: `mailto:${EMAIL}` },
-                              { label: "WhatsApp Us", href: WA_GENERAL, ext: true },
-                              {
-                                 label: "Wholesale Enquiries",
-                                 href: `mailto:${EMAIL}?subject=${encodeURIComponent("Wholesale Enquiry")}`,
-                              },
-                              { label: "FAQ", href: "/contact" },
-                           ].map((l) => (
-                              <li key={l.label}>
-                                 <Link
-                                    href={l.href}
-                                    target={l.ext ? "_blank" : undefined}
-                                    rel={l.ext ? "noopener noreferrer" : undefined}
-                                    className="text-sm hover:text-white transition-colors"
-                                 >
-                                    {l.label}
-                                 </Link>
-                              </li>
-                           ))}
-                        </ul>
+                        <div>
+                           <p className="font-bold uppercase tracking-widest mb-4">Support</p>
+                           <ul className="space-y-2.5">
+                              {[
+                                 { label: "Get a Quote", href: `mailto:${EMAIL}` },
+                                 { label: "WhatsApp Us", href: WA_GENERAL, ext: true },
+                                 {
+                                    label: "Wholesale Enquiries",
+                                    href: `mailto:${EMAIL}?subject=${encodeURIComponent("Wholesale Enquiry")}`,
+                                 },
+                                 { label: "FAQ", href: "/contact" },
+                              ].map((l) => (
+                                 <li key={l.label}>
+                                    <Link
+                                       href={l.href}
+                                       target={l.ext ? "_blank" : undefined}
+                                       rel={l.ext ? "noopener noreferrer" : undefined}
+                                       className="text-sm hover:text-white transition-colors"
+                                    >
+                                       {l.label}
+                                    </Link>
+                                 </li>
+                              ))}
+                           </ul>
+                        </div>
                      </div>
 
                      <div>
