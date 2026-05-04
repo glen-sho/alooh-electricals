@@ -9,7 +9,7 @@ export default function CTASection({ heading }: { heading?: string }) {
    const title = heading || "Need electrical supplies? Let\u2019s talk.";
 
    return (
-      <section className="py-16 md:py-20 bg-[#4e4e4e]">
+      <section className="py-16 md:py-16 bg-cta px-4 md:px-0">
          <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                <div className="space-y-2">
@@ -24,7 +24,7 @@ export default function CTASection({ heading }: { heading?: string }) {
                      4870 Sparrow Close, Tema Industrial Area &middot; Mon&ndash;Fri 8am&ndash;6pm
                   </p>
                </div>
-               <div className="w-1/3">
+               <div className="md:w-1/3">
                   <ActionButton />
                </div>
             </div>

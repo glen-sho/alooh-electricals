@@ -7,7 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Sidebar from "../Sidebar/Index";
-import ActionButton, { PHONE } from "../ActionButtons";
+import ActionButton from "../ActionButtons";
+import { PHONE } from "@/data/products";
 
 export const navLinks = [
    { name: "Home", href: "/" },
@@ -22,18 +23,16 @@ export default function Header() {
    const pathname = usePathname();
 
    return (
-      <header className="w-full sticky top-0 z-50">
-         <div className="py-1.5 px-4 bg-sky-700/55 backdrop-blur-sm h-13 flex w-full justify-center items-center">
-            <Carousel plugins={[Autoplay({ delay: 3000 })]} opts={{ loop: true }} className="top-1">
+      <header className="w-full sticky top-0 z-50 shadow-xl shadow-neutral-400/10">
+         <div className="py-1.5 md:px-4 bg-yellow-700/45 backdrop-blur-sm h-13 flex w-full justify-center items-center">
+            <Carousel plugins={[Autoplay({ delay: 3000 })]} opts={{ loop: true }} className="top-0.5">
                <CarouselContent className="text-center flex items-center">
                   <CarouselItem className="leading-px">
-                     <strong className="uppercase text-sm text-black leading-3">
+                     <strong className="uppercase text-xs md:text-sm text-black leading-3">
                         &#9889; Built on 40 years. Building Ghana&apos;s future. <br />
                      </strong>
-                     <p className="text-white uppercase text-sm">Call or whatsapp: {PHONE}</p>
+                     <p className="text-white uppercase text-xs md:text-sm">Call or whatsapp: {PHONE}</p>
                   </CarouselItem>
-                  <CarouselItem className="text-center">Welcome to our store</CarouselItem>
-                  <CarouselItem className="text-center uppercase">Made in Ghana, Trusted Worldwide</CarouselItem>
                </CarouselContent>
             </Carousel>
          </div>
@@ -52,16 +51,12 @@ export default function Header() {
                   ))}
                </div>
 
-               <button
-                  className="lg:hidden p-1.5 text-gray-600"
-                  onClick={() => setMenuOpen(true)}
-                  aria-label="Open menu"
-               >
-                  <Menu size={22} />
+               <button className="lg:hidden text-gray-600" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+                  <Menu size={32} />
                </button>
                <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
-               <Link href={"/"} className="mx-auto absolute left-1/2 -translate-x-1/2 w-48 h-6 lg:w-80 lg:h-8">
+               <Link href={"/"} className="mx-auto absolute left-1/2 -translate-x-1/2 w-60 h-6 lg:w-80 lg:h-8">
                   <Image
                      src={"/logo.png"}
                      alt="logo"

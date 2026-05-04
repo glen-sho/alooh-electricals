@@ -1,57 +1,31 @@
+import { products } from "@/data/products";
 import React from "react";
 
 export default function HeroCard() {
-   const heroCards = [
-      {
-         badge: "NEW ARRIVAL",
-         badgeBg: "#2563eb",
-         name: "New Orient 3-Gang Switch",
-         desc: "Quality-checked, ready to install",
-         img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop",
-      },
-      {
-         badge: "TOP RATED",
-         badgeBg: "#7c3aed",
-         name: "LED Panel Surface Lights",
-         desc: "Energy efficient, long-life LED",
-         img: "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=400&auto=format&fit=crop",
-      },
-      {
-         badge: "MADE IN GHANA",
-         badgeBg: "#16a34a",
-         name: "3x3 Conduit Box",
-         desc: "Manufactured at our Tema factory",
-         img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?q=80&w=400&auto=format&fit=crop",
-      },
-   ];
+   const heroCards = {
+      id: "6c97057d-fc8c-48dd-abd4-563f44519f80",
+      name: "NEWORIENT STANDING FAN",
+      images: ["neworient-standing-fan.png"],
+      description:
+         "Professional Neworient standing fan, 5-blade high-velocity design with 4-speed push-button control. This product is designed to provide a neat, safe, and professional finish for electrical installations, helping to protect cables from damage, dust, and moisture. It is easy to install and suitable for both residential and commercial applications, ensuring long-lasting performance and reliability. Its sturdy construction and clean design make it ideal for maintaining organized wiring systems while enhancing overall aesthetics. It is also lightweight yet durable, making handling and installation convenient for technicians and DIY users alike.",
+   };
    return (
-      <div className="flex flex-col gap-3">
-         {heroCards.map((item) => (
-            <div
-               key={item.name}
-               className="flex items-center gap-4 p-3 border border-stone-300 rounded-md bg-stone-200/35"
-            >
-               <div className="w-14 h-14 rounded-md overflow-hidden bg-mist-300 shrink-0">
-                  {/* <Image
-                                 src={item.img}
-                                 alt={item.name}
-                                 width={200}
-                                 height={200}
-                                 className="w-full h-full object-cover"
-                              /> */}
-               </div>
-               <div className="flex-1 min-w-0">
-                  <span
-                     className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-[3px] text-white "
-                     style={{ backgroundColor: item.badgeBg }}
-                  >
-                     {item.badge}
+      <div>
+         <div className=" relative">
+            <img src={heroCards.images[0]} alt={"heroImage"} className="w-full h-full object-contain bg-mist-100" />
+            <div className="absolute top-0 flex flex-col gap-3 h-full justify-between">
+               <div className="left-5 relative flex flex-col">
+                  <img src={"/flag.png"} alt={"flag"} className="w-20 h-20 object-contain" />
+                  <span className="text-[11px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-[3px] w-fit text-white bg-purple-700">
+                     MADE IN GHANA
                   </span>
-                  <p className=" text-md font-medium mt-1 leading-tight">{item.name}</p>
-                  <p className="text-gray-500 text-sm mt-0.5">{item.desc}</p>
+               </div>
+               <div className="bg-mist-300 p-2 bottom-20 relative text-black">
+                  <p className=" text-lg font-bold mt-1 leading-tight">{heroCards.name}</p>
+                  <p className="mt-0.5"> Manufactured at our Tema factory</p>
                </div>
             </div>
-         ))}
+         </div>
          <p className="text-center text-md text-gray-500 mt-1">
             No prices displayed &middot; WhatsApp or email to enquire
          </p>

@@ -37,13 +37,15 @@ export default function Contact() {
          <div className="max-w-7xl mx-auto pt-10 lg:pt-12 pb-20">
             <div className="">
                <div className="space-y-2">
-                  <h1 className="text-3xl lg:text-4xl font-bold">Get in touch</h1>
-                  <p className="text-lg">
-                     {` We'd like to hear from you, whether you have a question need support , or want to learnmore
+                  <div className="px-4 md:px-0">
+                     <h1 className="text-3xl lg:text-4xl font-bold">Get in touch</h1>
+                     <p className="text-lg">
+                        {` We'd like to hear from you, whether you have a question need support , or want to learnmore
                      aboutour services.`}
-                  </p>
+                     </p>
+                  </div>
 
-                  <div className="grid grid-cols-2 items-center gap-12">
+                  <div className="grid md:grid-cols-2 items-center gap-12 px-4 md:px-0">
                      <div className="my-4">
                         <h2 className="text-xl font-medium mb-6">Send us a message</h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
@@ -81,7 +83,7 @@ export default function Contact() {
                                     value={form[f.name]}
                                     onChange={handleChange}
                                     placeholder={f.placeholder}
-                                    className="w-full border border-gray-200 rounded-[7px] px-3.5 py-2.5 text-sm outline-none focus:bg-stone-100"
+                                    className="w-full border border-gray-300 rounded-[7px] px-3.5 py-2.5 text-sm outline-none focus:bg-stone-100"
                                  />
                               </div>
                            ))}
@@ -96,7 +98,7 @@ export default function Contact() {
                                  value={form.message}
                                  onChange={handleChange}
                                  placeholder="How can we help you?"
-                                 className="w-full border border-gray-200 rounded-[7px] px-3.5 py-2.5 text-sm text-gray-900 outline-none resize-none placeholder-gray-300"
+                                 className="w-full border border-gray-300 rounded-[7px] px-3.5 py-2.5 text-sm text-gray-900 outline-none resize-none placeholder-gray-300"
                                  style={{ backgroundColor: "#fafafa" }}
                               />
                            </div>
@@ -105,15 +107,15 @@ export default function Contact() {
                            </p>
                            <button
                               type="submit"
-                              className="w-fit text-white py-3 rounded-[7px] cursor-pointer text-sm font-medium hover:opacity-90 transition-opacity bg-primary px-6"
+                              className="w-full md:w-fit text-white py-3 rounded-[7px] cursor-pointer text-sm font-medium hover:opacity-90 transition-opacity bg-primary px-6"
                            >
                               {loading ? <p className="animate-pulse"> Sending...</p> : "Send Message"}
                            </button>
                         </form>
                      </div>
                      <div className="space-y-4">
-                        <div className="border border-gray-200 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-100">
+                        <div className="border border-gray-300 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
                               <MessageCircle size={17} className="text-mist-500" />
                            </div>
                            <div>
@@ -138,8 +140,8 @@ export default function Contact() {
                            </div>
                         </div>
 
-                        <div className="border border-gray-200 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-100">
+                        <div className="border border-gray-300 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
                               <MapPin size={17} className="text-mist-500" />
                            </div>
                            <div>
@@ -148,12 +150,12 @@ export default function Contact() {
                            </div>
                         </div>
 
-                        <div className="border border-gray-200 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0">
-                              <Mail size={17} />
+                        <div className="border border-gray-300 p-5 flex gap-4">
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
+                              <Mail size={17} className="text-mist-500" />
                            </div>
                            <div>
-                              <p className="text-sm font-bold uppercase tracking-widest mb-1.5">Email Us</p>
+                              <p className="font-bold uppercase tracking-widest mb-1.5">Email Us</p>
                               <a href={`mailto:${EMAIL}`} className="hover:underline font-bold">
                                  {EMAIL}
                               </a>
