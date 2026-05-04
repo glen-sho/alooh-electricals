@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import productsData from "@/productData.json";
 import { toSlug } from "@/lib/utils";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, useCarousel } from "@/components/ui/carousel";
 import RelatedProducts from "../RelatedProducts";
+import { products } from "@/data/products";
 
 function ZoomableImage({ src, alt }: { src: string; alt: string }) {
    const [origin, setOrigin] = useState("50% 50%");
@@ -20,7 +20,7 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
 
    return (
       <div
-         className="relative z-1 bg-mist-100 h-125 w-full overflow-hidden cursor-zoom-in"
+         className="relative z-1 h-125 w-full overflow-hidden cursor-zoom-in"
          onMouseMove={handleMouseMove}
          onMouseEnter={() => setZoomed(true)}
          onMouseLeave={() => setZoomed(false)}
@@ -28,7 +28,7 @@ function ZoomableImage({ src, alt }: { src: string; alt: string }) {
          <Image
             src={src}
             alt={alt}
-            className="object-contain max-h-[85%] max-w-[85%] mx-auto my-auto transition-transform duration-200 ease-out"
+            className="object-cover max-h-[85%] max-w-full mx-auto my-auto transition-transform duration-200 ease-out"
             style={{
                transform: zoomed ? "scale(2)" : "scale(1)",
                transformOrigin: origin,
@@ -45,7 +45,7 @@ function ThumbnailSlider({ images }: { images: string[] }) {
    return (
       <div className="flex gap-1 z-20 relative cursor-pointer mt-1">
          {images.map((img, i) => (
-            <div key={img} className="bg-neutral-100 flex h-20 w-20">
+            <div key={img} className=" flex h-20 w-20 border-mist-200 border">
                <Image
                   src={`/${img}`}
                   alt={img}
@@ -62,13 +62,13 @@ function ThumbnailSlider({ images }: { images: string[] }) {
 }
 
 export default function ProductDetailsContent({ slug }: { slug: string }) {
-   const product = productsData.find((p) => toSlug(p.title) === slug);
+   const product = products.find((p) => toSlug(p.name) === slug);
 
    if (!product) {
       return <div>Product not found</div>;
    }
 
-   const { title, description, images, category } = product || {};
+   const { name, description, images, category } = product || {};
 
    return (
       <div className="">
@@ -77,8 +77,8 @@ export default function ProductDetailsContent({ slug }: { slug: string }) {
                <Carousel className="">
                   <CarouselContent className="ml-0">
                      {images.map((img, index) => (
-                        <CarouselItem key={index} className="pl-0">
-                           <ZoomableImage src={`/${img}`} alt={title} />
+                        <CarouselItem key={index} className="pl-0 border border-mist-300">
+                           <ZoomableImage src={`/${img}`} alt={name} />
                         </CarouselItem>
                      ))}
                   </CarouselContent>
@@ -89,18 +89,14 @@ export default function ProductDetailsContent({ slug }: { slug: string }) {
                      {category}
                   </p>
                   <div className="space-y-4">
-                     <h1 className="font-heading text-4xl lg:text-5xl font-semibold mt-4">{title}</h1>
+                     <h1 className="font-heading text-4xl lg:text-5xl font-semibold mt-4">{name}</h1>
                      <p className="text-lg">{description}</p>
                   </div>
                </div>
             </div>
             <div className="w-full space-y-6 p-4">
                <h2 className="text-2xl font-semibold">Related Products</h2>
-               <RelatedProducts
-                  products={productsData}
-                  currentProductId={product.id}
-                  currentCategory={product.category}
-               />
+               <RelatedProducts products={products} currentProductId={product.id} currentCategory={product.category} />
             </div>
          </div>
       </div>

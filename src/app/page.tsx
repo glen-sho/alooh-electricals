@@ -9,7 +9,6 @@ export default function Home() {
          <Hero />
          <Products />
          <Banner />
-         <CTASection />
       </div>
    );
 }

@@ -6,18 +6,17 @@ const heroStats = [
    { number: "2022", label: "Factory Est." },
    { number: "1st", label: "Conduit Manufacturer in Ghana" },
 ];
-export default function Stats() {
+export default function Stats({ position, color }: { position?: "center"; color?: string }) {
    return (
-      <div
-         className="grid grid-cols-2 sm:grid-cols-4 gap-5 pt-6"
-         style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
-      >
-         {heroStats.map((s) => (
-            <div key={s.label}>
-               <p className="text-2xl font-bold text-red-400">{s.number}</p>
-               <p className="text-sm text-white mt-0.5 leading-snug">{s.label}</p>
-            </div>
-         ))}
+      <div className={`flex justify-${position} items-center`}>
+         <div className="flex gap-4 sm:grid-cols-4">
+            {heroStats.map((s) => (
+               <div key={s.label} className={`text-${color}`}>
+                  <p className="text-3xl font-bold">{s.number}</p>
+                  <p className="mt-0.5 leading-snug text-sm">{s.label}</p>
+               </div>
+            ))}
+         </div>
       </div>
    );
 }

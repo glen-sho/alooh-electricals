@@ -6,24 +6,25 @@ export default function CategoryTab({
    setActiveFilter,
    activeFilter,
 }: {
-   categories: string[];
+   categories: Record<string, string>;
    setActiveFilter: React.Dispatch<React.SetStateAction<string>>;
    activeFilter: string;
 }) {
+   const categoriesFilter = { All: "All", ...categories };
    return (
-      <div className="flex flex-wrap gap-2 mb-4">
-         {categories.map((cat) => (
+      <div className="flex flex-wrap gap-2 mb-4 px-4 md:px-0">
+         {Object.entries(categoriesFilter).map(([key, value]) => (
             <button
-               key={cat}
-               onClick={() => setActiveFilter(cat)}
+               key={key}
+               onClick={() => setActiveFilter(value)}
                className={cn(
-                  activeFilter === cat
+                  activeFilter === value
                      ? "bg-primary text-white border-primary"
-                     : "bg-[#f5f5f3] text-[#555] border-[#e8e8e8]",
-                  "px-4 py-1.5 text-sm font-medium border transition-colors cursor-pointer",
+                     : "border-[#e8e8e8] hover:bg-neutral-100",
+                  "px-4 py-1.5 font-medium border transition-colors cursor-pointer",
                )}
             >
-               {cat}
+               {value}
             </button>
          ))}
       </div>
