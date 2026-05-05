@@ -68,7 +68,7 @@ export default function ProductDetailsContent({ slug }: { slug: string }) {
       return <div>Product not found</div>;
    }
 
-   const { name, description, images, category } = product || {};
+   const { name, description, images, category, brand } = product || {};
 
    return (
       <div className="">
@@ -85,11 +85,10 @@ export default function ProductDetailsContent({ slug }: { slug: string }) {
                   <ThumbnailSlider images={images} />
                </Carousel>
                <div className="space-y-8 px-4">
-                  <p className="capitalize p-0.5 border text-sm border-neutral-200 rounded-full px-3 w-fit">
-                     {category}
-                  </p>
+                  <p className="uppercase text-sm text-mist-500">{category}</p>
                   <div className="space-y-4">
                      <h1 className="font-heading text-4xl lg:text-5xl font-semibold mt-4">{name}</h1>
+                     <p className="text-lg text-mist-500">Brand: {brand}</p>
                      <p className="text-lg">{description}</p>
                   </div>
                </div>
