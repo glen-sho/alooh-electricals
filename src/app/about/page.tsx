@@ -64,36 +64,43 @@ export default function About() {
          </div>
          <div className="">
             <div className="max-w-7xl mx-auto py-20 space-y-12 p-4">
-               <div className="grid md:grid-cols-[1.3fr_1fr] gap-12">
-                  <div className="space-y-4">
-                     <h1 className="uppercase font-semibold">Founder · Alfred Kofi Gyan & his wife</h1>
-                     <h1 className="text-3xl font-bold">A Legacy Built Over Four Decades</h1>
-                     <p className="">
-                        Alfred Kofi Gyan did not build Alooh Electricals overnight and he did not build it alone.
-                        Together with his wife, he started in the 1980s trading car tyres in Ghana's most difficult
-                        economic era.
-                        <br />
-                        <br />
-                        A business trip to Nigeria in the early 1990s changed everything. A trader he met there told him
-                        about China, its manufacturing capability and extraordinary pricing. Alfred flew to China, saw
-                        the opportunity, and took it. He pivoted entirely into electrical goods, building supply
-                        relationships across China, India, Turkey and Dubai. Alooh Electricals grew into one of Ghana's
-                        most trusted names in electrical supply.
-                        <br />
-                        <br />
-                        By 2010, Alfred saw a new problem: the Ghanaian market was being flooded with counterfeit
-                        versions of well-known brands. His response was to create his own brand. New Orient was built on
-                        the quality standards he had spent decades learning from the world's best manufacturers.
-                        <br />
-                        <br />
-                        The plan was deliberate: launch the brand, test the market, then bring production home to Ghana.
-                        In 2022, that vision became a factory. Alooh Electricals became the first company in Ghana to
-                        manufacture conduit boxes locally. PVC Pipes and Trunking are in development. It is not just
-                        business. It is a legacy in the making.
-                     </p>
+               <div className="grid md:grid-cols-[2fr_1fr] gap-12 justify-center">
+                  <div className="space-y-12">
+                     <div className="space-y-4">
+                        <h1 className="uppercase font-semibold">Founder · Alfred Kofi Gyan & his wife</h1>
+                        <h1 className="text-3xl font-bold">A Legacy Built Over Four Decades</h1>
+                        <p className="">
+                           Alfred Kofi Gyan did not build Alooh Electricals overnight and he did not build it alone.
+                           Together with his wife, he started in the 1980s trading car tyres in Ghana's most difficult
+                           economic era.
+                           <br />
+                           <br />
+                           A business trip to Nigeria in the early 1990s changed everything. A trader he met there told
+                           him about China, its manufacturing capability and extraordinary pricing. Alfred flew to
+                           China, saw the opportunity, and took it. He pivoted entirely into electrical goods, building
+                           supply relationships across China, India, Turkey and Dubai. Alooh Electricals grew into one
+                           of Ghana's most trusted names in electrical supply.
+                           <br />
+                           <br />
+                           By 2010, Alfred saw a new problem: the Ghanaian market was being flooded with counterfeit
+                           versions of well-known brands. His response was to create his own brand. New Orient was built
+                           on the quality standards he had spent decades learning from the world's best manufacturers.
+                           <br />
+                           <br />
+                           The plan was deliberate: launch the brand, test the market, then bring production home to
+                           Ghana. In 2022, that vision became a factory. Alooh Electricals became the first company in
+                           Ghana to manufacture conduit boxes locally. PVC Pipes and Trunking are in development. It is
+                           not just business. It is a legacy in the making.
+                        </p>
+                     </div>
+                     <img
+                        src="/factory2.jpeg"
+                        alt="Alooh Electricals factory — New Orient punch press in operation, Tema Ghana"
+                        className="w-full h-110 object-cover opacity-85"
+                     />
                   </div>
                   <div className="">
-                     <div className="rounded-lg p-5 bg-[#061b1f]">
+                     <div className="rounded-lg p-5 bg-[#0f3037]">
                         <span className="block font-serif leading-none select-none mb-2 text-white text-5xl">
                            &ldquo;
                         </span>
