@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Clock, Phone } from "lucide-react";
 import Socials from "../Socials";
 import Newsletter from "../Newsletter";
 import Link from "next/link";
@@ -35,7 +35,7 @@ export default function Footer() {
                         Ghana&apos;s leading electrical goods supplier and manufacturer. Based in Tema Industrial Area
                         since the 1980s.
                      </p>
-                     <Newsletter />
+                     {/* <Newsletter /> */}
                   </div>
                   <div className="grid md:grid-cols-2 gap-8">
                      <div className="grid grid-cols-2">
@@ -93,7 +93,7 @@ export default function Footer() {
                               <span className="text-sm leading-snug">{ADDRESS}</span>
                            </li>
                            <li className="flex items-center gap-2.5">
-                              <MessageCircle size={13} className=" shrink-0" />
+                              <Phone size={13} className=" shrink-0" />
                               <Link
                                  href={WA_GENERAL}
                                  target="_blank"

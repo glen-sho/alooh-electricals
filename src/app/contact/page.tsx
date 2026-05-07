@@ -107,7 +107,7 @@ export default function Contact() {
                            </p>
                            <button
                               type="submit"
-                              className="w-full md:w-fit text-white py-3 rounded-[7px] cursor-pointer text-sm font-medium hover:opacity-90 transition-opacity bg-primary px-6"
+                              className="w-full md:w-fit text-white py-3 rounded-[7px] cursor-pointer text-sm font-medium hover:opacity-90 transition-opacity bg-navy_blue px-6"
                            >
                               {loading ? <p className="animate-pulse"> Sending...</p> : "Send Message"}
                            </button>
@@ -115,8 +115,8 @@ export default function Contact() {
                      </div>
                      <div className="space-y-4">
                         <div className="border border-gray-300 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
-                              <MessageCircle size={17} className="text-mist-500" />
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-primary/15">
+                              <MessageCircle size={17} className="text-primary" />
                            </div>
                            <div>
                               <p className="font-bold uppercase tracking-widest mb-1.5">Phone / WhatsApp</p>
@@ -141,8 +141,8 @@ export default function Contact() {
                         </div>
 
                         <div className="border border-gray-300 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
-                              <MapPin size={17} className="text-mist-500" />
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-primary/15">
+                              <MapPin size={17} className="text-primary" />
                            </div>
                            <div>
                               <p className="font-bold uppercase tracking-widest mb-1.5">Visit Us</p>
@@ -151,8 +151,8 @@ export default function Contact() {
                         </div>
 
                         <div className="border border-gray-300 p-5 flex gap-4">
-                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-mist-200">
-                              <Mail size={17} className="text-mist-500" />
+                           <div className="w-10 h-10 rounded-md flex items-center justify-center shrink-0 bg-primary/15">
+                              <Mail size={17} className="text-primary" />
                            </div>
                            <div>
                               <p className="font-bold uppercase tracking-widest mb-1.5">Email Us</p>

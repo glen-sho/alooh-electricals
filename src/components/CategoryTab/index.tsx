@@ -18,10 +18,8 @@ export default function CategoryTab({
                key={key}
                onClick={() => setActiveFilter(value)}
                className={cn(
-                  activeFilter === value
-                     ? "bg-primary text-white border-primary"
-                     : "border-[#e8e8e8] hover:bg-neutral-100",
-                  "px-4 py-1.5 font-medium border transition-colors cursor-pointer",
+                  activeFilter === value ? "bg-navy_blue text-white " : "border-[#e8e8e8] hover:bg-neutral-100",
+                  "px-4 py-1.5 font-medium border transition-colors rounded-sm cursor-pointer",
                )}
             >
                {value}

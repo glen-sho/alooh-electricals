@@ -232,7 +232,7 @@ export default function OurFactory() {
                      return (
                         <div key={step.title} className="flex flex-col items-center text-center">
                            <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-primary">
-                              <Icon size={18} className="text-white" />
+                              <Icon size={18} className="text-navy_blue" />
                            </div>
                            <div className="bg-white p-5 flex flex-col gap-2 w-full">
                               <span className="text-xs font-bold uppercase tracking-widest">Step {i + 1}</span>
@@ -267,7 +267,7 @@ export default function OurFactory() {
                            <WhatsAppButton />
                            <a
                               href={`mailto:${EMAIL}?subject=${encodeURIComponent("New Orient Partnership / Distribution Enquiry")}`}
-                              className="flex items-center gap-2 px-6 py-3.5 text-nowrap rounded-[7px] text-sm font-medium border border-primary text-primary"
+                              className="flex items-center gap-2 px-6 py-3.5 text-nowrap rounded-[7px] text-sm font-medium border border-navy_blue text-navy_blue"
                            >
                               <Mail size={15} /> Email Glen
                            </a>

@@ -26,7 +26,7 @@ export default function Products() {
             </div>
             <div className="h-px w-full bg-mist-200 my-6" />
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4 md:px-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-12 px-4 md:px-0">
                {displayProducts.slice(0, 10).map((product: DisplayProductsType) => (
                   <ProductCard key={product.id} product={product} />
                ))}
@@ -35,7 +35,7 @@ export default function Products() {
             <div className="text-center mt-10">
                <Link
                   href="/products"
-                  className="inline-flex items-center bg-primary gap-2 text-white px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center bg-navy_blue gap-2 text-white px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
                >
                   Browse Full Catalogue <ArrowRight size={15} />
                </Link>
