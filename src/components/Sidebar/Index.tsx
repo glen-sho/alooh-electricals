@@ -75,7 +75,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                <ActionButton dr="col" />
             </nav>
             <div className="px-5 pb-8 border-t border-neutral-200 pt-4">
-               <p className="text-xs text-neutral-400 uppercase tracking-widest mb-1">Follow us</p>
+               <p className="text-xs text-neutral-600 uppercase tracking-widest mb-1">Follow us</p>
                <Socials />
             </div>
          </aside>
