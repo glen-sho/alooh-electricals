@@ -24,17 +24,15 @@ export default function Header() {
 
    return (
       <header className="w-full sticky top-0 z-50 shadow-xl shadow-neutral-400/10">
-         <div className="py-1.5 md:px-4 bg-yellow-700/45 backdrop-blur-sm h-13 flex w-full justify-center items-center">
-            <Carousel plugins={[Autoplay({ delay: 3000 })]} opts={{ loop: true }} className="top-0.5">
-               <CarouselContent className="text-center flex items-center">
-                  <CarouselItem className="leading-px">
-                     <strong className="uppercase text-xs md:text-sm text-black leading-3">
-                        &#9889; Built on 40 years. Building Ghana&apos;s future. <br />
-                     </strong>
-                     <p className="text-white uppercase text-xs md:text-sm">Call or whatsapp: {PHONE}</p>
-                  </CarouselItem>
-               </CarouselContent>
-            </Carousel>
+         <div className="py-1.5 md:px-4 bg-yellow-700/45 backdrop-blur-sm flex w-full justify-center items-center">
+            <div className="flex justify-center items-center leading-0 h-9">
+               <div className="text-center relative top-1">
+                  <strong className="uppercase text-xs md:text-sm text-black leading-3">
+                     &#9889; Built on 40 years. Building Ghana&apos;s future. <br />
+                  </strong>
+                  <p className="text-white uppercase text-xs md:text-sm font-medium">Call or whatsapp: {PHONE}</p>
+               </div>
+            </div>
          </div>
 
          <nav className="bg-white border-b border-gray-100 px-4 md:px-8 py-3">

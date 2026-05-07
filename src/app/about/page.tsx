@@ -1,6 +1,3 @@
-import CTASection from "@/components/CTASection";
-import React from "react";
-
 export default function About() {
    const timeline = [
       {
@@ -100,7 +97,7 @@ export default function About() {
                      />
                   </div>
                   <div className="">
-                     <div className="rounded-lg p-5 bg-[#0f3037]">
+                     <div className="rounded-lg p-5 bg-slate-600">
                         <span className="block font-serif leading-none select-none mb-2 text-white text-5xl">
                            &ldquo;
                         </span>
@@ -116,11 +113,11 @@ export default function About() {
                         <span className="block font-serif leading-none select-none mb-2 text-white text-5xl rotate-180 relative">
                            &ldquo;
                         </span>
-                        <div className="mt-5 mb-4 h-px bg-gray-700" />
+                        <div className="mt-5 mb-4 h-px bg-slate-500" />
                         <p className="font-bold text-lg text-white">Alfred Kofi Gyan</p>
-                        <p className="mt-0.5 text-gray-400">Founder and Managing Director, Alooh Electricals</p>
+                        <p className="text-gray-300">Founder and Managing Director, Alooh Electricals</p>
                      </div>
-                     <div className="grid grid-cols-2 gap-5 pt-5" style={{ borderTop: "1px solid #f0f0f0" }}>
+                     <div className="grid grid-cols-2 gap-5 pt-5">
                         {founderStats.map((s) => (
                            <div key={s.label}>
                               <p className="text-3xl font-bold text-primary">{s.number}</p>
@@ -141,7 +138,7 @@ export default function About() {
                            className="gap-5 bg-white rounded-lg border border-gray-100 p-5 space-y-4 shadow-xl shadow-stone-200/30 md:h-60"
                         >
                            <div className="shrink-0 pt-0.5">
-                              <span className="font-bold text-sm px-2.5 py-1 rounded-sm text-white whitespace-nowrap bg-primary">
+                              <span className="font-medium text-sm px-2.5 py-1 rounded-sm whitespace-nowrap bg-primary text-navy_blue">
                                  {item.date}
                               </span>
                            </div>
