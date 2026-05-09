@@ -1,13 +1,8 @@
-import { products } from "@/data/products";
-import React from "react";
-
 export default function HeroCard() {
    const heroCards = {
-      id: "2235b39d-1b89-4288-9aad-6cee0a03c0f2",
-      name: "NEWORIENT 3X3 PLASTIC BOX",
-      images: ["3x3-plastic-box.png"],
-      description:
-         "Neworient 3x3 white plastic pattress box for surface-mounting. This product is designed to provide a neat, safe, and professional finish for electrical installations, helping to protect cables from damage, dust, and moisture. It is easy to install and suitable for both residential and commercial applications, ensuring long-lasting performance and reliability. Its sturdy construction and clean design make it ideal for maintaining organized wiring systems while enhancing overall aesthetics. It is also lightweight yet durable, making handling and installation convenient for technicians and DIY users alike.",
+      id: "672323b7-304a-4e6f-a79e-045bdbeceb39",
+      name: "NEWORIENT 3X6 CONDUIT BOX",
+      images: ["3x6-conduit-box.png"],
    };
 
    return (
